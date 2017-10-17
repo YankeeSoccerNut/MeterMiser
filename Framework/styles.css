@@ -1,0 +1,76 @@
+/* **** Color Scheme ********
+Red-Watermelon: #FF3B3F;
+Sky-Blue: #CAEBF2;
+Neutral-lightGrey: #EFEFEF;
+Carbon-darkGrey: #A9A9A9;
+*/
+
+body{
+  background: #EFEFEF;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  font-family: 'Roboto', Arial, Tahoma, sans-serif;
+}
+
+.container{
+  margin-top: 20%;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.card-box{
+  background: #fff;
+  min-height: 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-bottom: 30px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 15px;
+}
+
+.card-box .header{
+  color: #EFEFEF;
+  background-color: #FF3B3F;
+  padding: 20px;
+  position: relative;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.35);
+  border-radius: 15px 15px 0px 0px;
+}
+
+.card-box .card-box-padfont{
+  font-size: 14px;
+  padding: 20px;
+}
+
+.input-group{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-group .input-group-addon{
+  border: none;
+  background-color: transparent;
+  padding-left: 0;
+  font-weight: bold;
+}
+
+.input-group .input-group-addon .material-icons {
+    font-size: 18px;
+    color: #555;
+}
+
+.input-group .form-line{
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.input-group input[type="text"], .input-group .form-control {
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+}
