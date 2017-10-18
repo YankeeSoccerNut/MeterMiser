@@ -7,6 +7,8 @@
 // 4.  insert the validated rows into the target tables.
 // 5.  insert an entry in the activity log to record the polling activity.
 
+var mysql = require('mysql');
+
 // Get user id and password.....// TODO: encrypt/decrypt for security
 var fsIdPass = require('fs');
 var idPassRecord = '';
@@ -20,33 +22,60 @@ var trimmedUserPass = userIdPass[1].trim();
 
 console.log(trimmedUserPass);
 
-// Now format then make the request....
-var request = require('request');
-var returnedHTMLBody = '';
-var baseURL = 'https://tccna.honeywell.com/ws/MobileV2.asmx?AuthenticateUserLogin';
+// Now format then make the request for a sessionId....using curl
+var curlRequest = `curl -s -k -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'ApplicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=yankeesoccernut@gmail.com&UiLanguage=English&Password=f3mJsb29AVYe' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'`
 
-var applicationId = 'a0c7a795-ff44-4bcd-9a99-420fac57ff04';
-var applicationVersion = '2';
-var language = 'English';
+// need to ask the OS to exec the curl command for us...
+var util = require('util');
+var exec = require('child_process').exec;
 
-var targetURL = `${baseURL}&ApplicationID=${applicationId}&ApplicationVersion=${applicationVersion}&UiLanguage=&${language}&Username=${userIdPass[0]}&Password=${trimmedUserPass}`;
+var command = curlRequest;
+var xmlResponse = "";
 
-console.log(targetURL);
+//stdout is the response from the OS.  In this case it will be XML.
+child = exec(command, function(error, xmlResponse, stderr){
+  console.log('stdout: ' + xmlResponse);
+  console.log('stderr: ' + stderr);
 
-
-request({
-    url: `${baseURL}&ApplicationID=${applicationId}&ApplicationVersion=${applicationVersion}&UiLanguage=&${language}&Username=${userIdPass[0]}&Password=${trimmedUserPass}`,
-    method: "POST",
-    headers: {
-        "Host": "tccna.honeywell.com",
-        "User-Agent": "Apache-HttpClient/UNAVAILABLE (java 1.4)",
-        "content-type": "application/x-www-form-urlencoded",
-    },
-    body: returnedHTMLBody
-}, function (error, response, body){
-    console.log(error);
-    console.log(response);
+  if(error !== null) {
+    console.log('exec error: ' + error);
+  }
+  var parseString = require('xml2js').parseString;
+  parseString(xmlResponse, function (error, result) {
+      console.log("parsing");
+      console.log(result);
+      console.log(error);
+      console.log(`SessionID:  ${result.AuthenticateLoginResult.SessionID}`);
+  });
 });
+
+// parse the XML and get the Session ID...we'll use this for subsequent requests
+// var request = require('request');
+// var returnedHTMLBody = '';
+// var baseURL = 'https://tccna.honeywell.com/ws/MobileV2.asmx?AuthenticateUserLogin';
+//
+// var applicationId = 'a0c7a795-ff44-4bcd-9a99-420fac57ff04';
+// var applicationVersion = '2';
+// var language = 'English';
+//
+// var targetURL = `${baseURL}&ApplicationID=${applicationId}&ApplicationVersion=${applicationVersion}&UiLanguage=&${language}&Username=${userIdPass[0]}&Password=${trimmedUserPass}`;
+//
+// console.log(targetURL);
+//
+//
+// request({
+//     url: `${baseURL}&ApplicationID=${applicationId}&ApplicationVersion=${applicationVersion}&UiLanguage=&${language}&Username=${userIdPass[0]}&Password=${trimmedUserPass}`,
+//     method: "POST",
+//     headers: {
+//         "Host": "tccna.honeywell.com",
+//         "User-Agent": "Apache-HttpClient/UNAVAILABLE (java 1.4)",
+//         "content-type": "application/x-www-form-urlencoded",
+//     },
+//     body: returnedHTMLBody
+// }, function (error, response, body){
+//     console.log(error);
+//     console.log(response);
+// });
 
 
 
