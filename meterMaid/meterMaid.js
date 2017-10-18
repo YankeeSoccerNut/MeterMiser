@@ -15,72 +15,85 @@ var idPassRecord = '';
 
 // Use synchronous read as we really can't do anything else until we have the userId and password....
 idPassRecord = fsIdPass.readFileSync('myThermostats.txt', 'utf8');
-console.log(idPassRecord);
 
 var userIdPass = idPassRecord.split("|");
 var trimmedUserPass = userIdPass[1].trim();
 
-console.log(trimmedUserPass);
-
 // Now format then make the request for a sessionId....using curl
-var curlRequest = `curl -s -k -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'ApplicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=yankeesoccernut@gmail.com&UiLanguage=English&Password=f3mJsb29AVYe' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'`
+var curlRequest = `curl -s -k -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'ApplicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=${userIdPass[0]}&UiLanguage=English&Password=${trimmedUserPass}' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'`
 
 // need to ask the OS to exec the curl command for us...
 var util = require('util');
 var exec = require('child_process').exec;
+var parseString = require('xml2js').parseString;
 
 var command = curlRequest;
 var xmlResponse = "";
 
 //stdout is the response from the OS.  In this case it will be XML.
 child = exec(command, function(error, xmlResponse, stderr){
-  console.log('stdout: ' + xmlResponse);
+  console.log("AuthenticateUserLogin...")
+  // console.log('stdout: ' + xmlResponse);
   console.log('stderr: ' + stderr);
 
   if(error !== null) {
     console.log('exec error: ' + error);
-  }
-  var parseString = require('xml2js').parseString;
+  };
+
+  var sessionID = '';
+
   parseString(xmlResponse, function (error, result) {
       console.log("parsing");
-      console.log(result);
+      // console.log(result);
       console.log(error);
-      console.log(`SessionID:  ${result.AuthenticateLoginResult.SessionID}`);
+      sessionID = result.AuthenticateLoginResult.SessionID;
   });
-});
 
-// parse the XML and get the Session ID...we'll use this for subsequent requests
-// var request = require('request');
-// var returnedHTMLBody = '';
-// var baseURL = 'https://tccna.honeywell.com/ws/MobileV2.asmx?AuthenticateUserLogin';
-//
-// var applicationId = 'a0c7a795-ff44-4bcd-9a99-420fac57ff04';
-// var applicationVersion = '2';
-// var language = 'English';
-//
-// var targetURL = `${baseURL}&ApplicationID=${applicationId}&ApplicationVersion=${applicationVersion}&UiLanguage=&${language}&Username=${userIdPass[0]}&Password=${trimmedUserPass}`;
-//
-// console.log(targetURL);
-//
-//
-// request({
-//     url: `${baseURL}&ApplicationID=${applicationId}&ApplicationVersion=${applicationVersion}&UiLanguage=&${language}&Username=${userIdPass[0]}&Password=${trimmedUserPass}`,
-//     method: "POST",
-//     headers: {
-//         "Host": "tccna.honeywell.com",
-//         "User-Agent": "Apache-HttpClient/UNAVAILABLE (java 1.4)",
-//         "content-type": "application/x-www-form-urlencoded",
-//     },
-//     body: returnedHTMLBody
-// }, function (error, response, body){
-//     console.log(error);
-//     console.log(response);
-// });
+// Now use the sessionID to poll this user's account and get readings for all thermostats....
+  curlRequest = `curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=${sessionID}'`;
 
+  command = curlRequest;
+  child = exec(command, function(error, xmlResponse, stderr){
+    console.log("GetLocations...")
+    // console.log('stdout: ' + xmlResponse);
+    console.log('stderr: ' + stderr);
 
+    if(error !== null) {
+      console.log('exec error: ' + error);
+    };
 
+    saveReadings(xmlResponse);
 
+  });  // curl for GetLocations
 
+  // logoff the session with Honeywell
+  curlRequest = `curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/LogOff?sessionID=${sessionID}'`;
+
+  command = curlRequest;
+  child = exec(command, function(error, xmlResponse, stderr){
+    console.log ("LogOff...")
+    // console.log('stdout: ' + xmlResponse);
+    console.log('stderr: ' + stderr);
+
+    if(error !== null) {
+      console.log('exec error: ' + error);
+    };
+
+  });  // curl for Logoff
+}); // curl for sessionID
+
+function saveReadings(userLocationData) {
+  console.log(`saveReadings...${userLocationData}`);
+
+  parseString(userLocationData, function (error, result) {
+      console.log("parsing userLocationData...");
+      // console.log(result);
+      var theData = result.GetLocationsResult.Locations[0].LocationInfo[0].Thermostats[0].ThermostatInfo[0].UI[0]
+      console.log(theData.DispTemperature);
+      console.log(error);
+  });
+
+}
 
 // simple connect test.....PASSED!
 // var mysql = require('mysql');
