@@ -83,15 +83,48 @@ child = exec(command, function(error, xmlResponse, stderr){
 }); // curl for sessionID
 
 function saveReadings(userLocationData) {
-  console.log(`saveReadings...${userLocationData}`);
+  // console.log(`saveReadings...XML in:\n${userLocationData}`);
+  var theLocationsData;
+  var theThermostatsData;
+  var theThermostatReadingsData;
 
+  //Honeywell returns a deeply nested XML response...transform it to JSON and create some shortcuts to the data we really want
   parseString(userLocationData, function (error, result) {
+      if (error !== null) {    // TODO: beef up error checking...
+        console.log(error);
+      }
+
       console.log("parsing userLocationData...");
-      // console.log(result);
-      var theData = result.GetLocationsResult.Locations[0].LocationInfo[0].Thermostats[0].ThermostatInfo[0].UI[0]
-      console.log(theData.DispTemperature);
-      console.log(error);
+      console.log(`result.GetLocationsResult.Locations[0].LocationInfo.length: ${result.GetLocationsResult.Locations[0].LocationInfo.length}`);
+
+      console.dir(result.GetLocationsResult.Locations);
+      console.log(`result.GetLocationsResult:\n${result.GetLocationsResult}`);
+      console.log(`result.GetLocationsResult.Locations[0]:\n${result.GetLocationsResult.Locations[0]}`);
+      // console.log(`result.GetLocationsResult.Locations[0].LocationInfo[0]:\n${result.GetLocationsResult.Locations[0].LocationInfo[0]}`);
+
+
+      theLocationsData = result.GetLocationsResult.Locations[0].LocationInfo[0];
+      theThermostatsData = result.GetLocationsResult.Locations[0].LocationInfo[0].Thermostats[0].ThermostatInfo[0]
+      theThermostatReadingsData = result.GetLocationsResult.Locations[0].LocationInfo[0].Thermostats[0].ThermostatInfo[0].UI[0]
+
+      theLocationsData1 = result.GetLocationsResult.Locations[0].LocationInfo[1];
+      theThermostatsData1 = result.GetLocationsResult.Locations[0].LocationInfo[1].Thermostats[0].ThermostatInfo[0]
+
+
   });
+
+
+  console.log(theLocationsData);
+  console.log(theThermostatsData);
+  console.log(theLocationsData1);
+  console.log(theThermostatsData1);
+
+  console.log(theThermostatReadingsData);
+
+  // console.log(theLocationsData)[0].LocationID);
+  // console.log(theLocationsData[0].Name);
+  // console.log(theLocationsData[0].CurrentWeather);
+  // console.log(theLocationsData[0].TimeZone);
 
 }
 
