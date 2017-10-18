@@ -14,9 +14,12 @@ body{
 }
 
 .container{
-  margin-top: 20%;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 15% auto 35px;
+  min-width: 300px;
+  max-width: 450px;
+
 }
 
 .card-box{
@@ -32,7 +35,7 @@ body{
 }
 
 .card-box .header{
-  color: #EFEFEF;
+  color: white;
   background-color: #FF3B3F;
   padding: 20px;
   position: relative;
@@ -73,4 +76,24 @@ body{
     border: none;
     box-shadow: none;
     padding-left: 0;
+}
+
+.btn-signin-submit{
+  background-color: hsl(0, 100%, 33%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0f0f", endColorstr="#a80000");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#ff0f0f), to(#a80000));
+  background-image: -moz-linear-gradient(top, #ff0f0f, #a80000);
+  background-image: -ms-linear-gradient(top, #ff0f0f, #a80000);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff0f0f), color-stop(100%, #a80000));
+  background-image: -webkit-linear-gradient(top, #ff0f0f, #a80000);
+  background-image: -o-linear-gradient(top, #ff0f0f, #a80000);
+  background-image: linear-gradient(#ff0f0f, #a80000);
+  border-color: #a80000 #a80000 hsl(0, 100%, 28%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-font-smoothing: antialiased
+  font-weight: bold;
+}
+
 }
