@@ -83,60 +83,99 @@ child = exec(command, function(error, xmlResponse, stderr){
 }); // curl for sessionID
 
 function saveReadings(userLocationData) {
-  // console.log(`saveReadings...XML in:\n${userLocationData}`);
   var theLocationsData;
   var theThermostatsData;
   var theThermostatReadingsData;
 
-  //Honeywell returns a deeply nested XML response...transform it to JSON and create some shortcuts to the data we really want
+  //Honeywell returns a deeply nested XML response...transform it to JSON.  Create some shortcuts to the data we really want later.
   parseString(userLocationData, function (error, result) {
       if (error !== null) {    // TODO: beef up error checking...
         console.log(error);
       }
 
-      console.log("parsing userLocationData...");
-      console.log(`result.GetLocationsResult.Locations[0].LocationInfo.length: ${result.GetLocationsResult.Locations[0].LocationInfo.length}`);
+      // Loop through the Locations
+      // Get info for location, thermostats, and current readings and put them in our databas
+      // TODO: assumes 1 meter per location for now.
 
-      console.dir(result.GetLocationsResult.Locations);
-      console.log(`result.GetLocationsResult:\n${result.GetLocationsResult}`);
-      console.log(`result.GetLocationsResult.Locations[0]:\n${result.GetLocationsResult.Locations[0]}`);
-      // console.log(`result.GetLocationsResult.Locations[0].LocationInfo[0]:\n${result.GetLocationsResult.Locations[0].LocationInfo[0]}`);
+      // for Locations table...
+      var locationId = 0;
+      var name = '';
+      var addr1 = '';
+      var addr2 = '';
+      var city = '';
+      var state = '';
+      var zip5 = 0;
+      var zip4 = 0;
+
+      // for Thermostats table...
+      var thermostatId = 0;
+      var deviceName = '';
+      var userDefinedName = '';
+      var macId = '';
+      var DomainId = 0;
+      var canControlSchedule = null;
+      var willSupportSchedule = null;
+      var fanCanControl = null;
+      var fanCanSetAuto = null;
+      var fanCanSetOn = null;
+
+      // for Readings table...
+      var thermCreated = '';
+      var thermLocked = null;
+      var dispTemp = 0;
+      var heatSetPoint = 0;
+      var coolSetPoint = 0;
+      var displayUnits = '';
+      var statusHeat = 0;
+      var statusCool = 0;
+      var heatLowerSetPt = 0;
+      var heatUpperSetPt = 0;
+      var coolLowerSetPt = 0;
+      var coolUpperSetPt = 0;
+      var schedHeatSp = 0;
+      var schedCoolSp = 0;
+      var systemSwitchPos = 0;
+      var equipmentStatus = '';
+      var fanPosition = '';
+      var fanRunning = null;
+      var weatherIsDefined = null;
+      var weatherIsValid = null;
+      var weatherTemp = 0;
+      var weatherTempUnit = '';
+      var weatherCondition = '';
+
+      // open up the database connection...
+      var dbConnection = mysql.createConnection({
+        host     : 'localhost',
+        user     : 'root',
+        password : '',
+        database : 'meterMiser'
+      });
+      dbConnection.connect();
+
+      // Loop through locations...use shortcuts to JSON object we parsed earlier.
+
+      for (let i = 0; i < result.GetLocationsResult.Locations[0].LocationInfo.length; i++){
+        theLocationsData = result.GetLocationsResult.Locations[0].LocationInfo[i];
+        theThermostatsData = result.GetLocationsResult.Locations[0].LocationInfo[i].Thermostats[0].ThermostatInfo[0]
+        theThermostatReadingsData = result.GetLocationsResult.Locations[0].LocationInfo[i].Thermostats[0].ThermostatInfo[0].UI[0]
+
+        console.log(theLocationsData);
+        console.log(theThermostatsData);
+        console.log(theThermostatReadingsData)
+
+      }
+      // Commit the updated/inserted records...
+
+      // Close the database connection...
+      dbConnection.end();
 
 
-      theLocationsData = result.GetLocationsResult.Locations[0].LocationInfo[0];
-      theThermostatsData = result.GetLocationsResult.Locations[0].LocationInfo[0].Thermostats[0].ThermostatInfo[0]
-      theThermostatReadingsData = result.GetLocationsResult.Locations[0].LocationInfo[0].Thermostats[0].ThermostatInfo[0].UI[0]
-
-      theLocationsData1 = result.GetLocationsResult.Locations[0].LocationInfo[1];
-      theThermostatsData1 = result.GetLocationsResult.Locations[0].LocationInfo[1].Thermostats[0].ThermostatInfo[0]
+  });  // end parseString
 
 
-  });
+}  // end saveReadings
 
-
-  console.log(theLocationsData);
-  console.log(theThermostatsData);
-  console.log(theLocationsData1);
-  console.log(theThermostatsData1);
-
-  console.log(theThermostatReadingsData);
-
-  // console.log(theLocationsData)[0].LocationID);
-  // console.log(theLocationsData[0].Name);
-  // console.log(theLocationsData[0].CurrentWeather);
-  // console.log(theLocationsData[0].TimeZone);
-
-}
-
-// simple connect test.....PASSED!
-// var mysql = require('mysql');
-//
-// var connection = mysql.createConnection({
-//   host     : 'localhost',
-//   user     : 'root',
-//   password : '',
-//   database : 'meterMiser'
-// });
 //
 // connection.connect();
 //
