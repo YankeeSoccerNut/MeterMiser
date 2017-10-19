@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.19)
 # Database: meterMiser
-# Generation Time: 2017-10-18 14:08:07 +0000
+# Generation Time: 2017-10-19 03:33:13 +0000
 # ************************************************************
 
 
@@ -63,9 +63,9 @@ CREATE TABLE `LocationHours` (
 CREATE TABLE `Locations` (
   `locationId` int(6) unsigned NOT NULL,
   `name` varchar(32) NOT NULL DEFAULT '',
-  `addr1` varchar(32) NOT NULL DEFAULT '',
+  `addr1` varchar(32) DEFAULT '',
   `addr2` varchar(32) DEFAULT NULL,
-  `city` varchar(32) NOT NULL DEFAULT '',
+  `city` varchar(32) DEFAULT '',
   `state` char(2) DEFAULT NULL COMMENT 'Limiting to US Only',
   `zip5` int(5) NOT NULL,
   `zip4` int(4) DEFAULT NULL,
@@ -79,6 +79,7 @@ CREATE TABLE `Locations` (
 
 CREATE TABLE `Readings` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `thermostatId` int(6) NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'From the system',
   `thermCreated` datetime NOT NULL COMMENT 'From the thermostat',
   `thermLocked` tinyint(1) DEFAULT NULL,
@@ -113,12 +114,13 @@ CREATE TABLE `Readings` (
 
 CREATE TABLE `Thermostats` (
   `thermostatId` int(6) unsigned NOT NULL AUTO_INCREMENT,
-  `deviceName` varchar(32) DEFAULT NULL,
+  `locationId` int(6) NOT NULL,
+  `deviceName` varchar(32) NOT NULL DEFAULT '',
   `userDefinedName` varchar(32) DEFAULT NULL,
   `macId` varchar(32) DEFAULT NULL,
   `DomainId` int(5) DEFAULT NULL,
-  `canControlSchedule` tinyint(1) NOT NULL,
-  `willSupportSchedule` tinyint(1) NOT NULL,
+  `canControlSchedule` tinyint(1) DEFAULT NULL,
+  `willSupportSchedule` tinyint(1) DEFAULT NULL,
   `fanCanControl` tinyint(1) DEFAULT NULL,
   `fanCanSetAuto` tinyint(1) DEFAULT NULL,
   `fanCanSetOn` tinyint(1) DEFAULT NULL,
