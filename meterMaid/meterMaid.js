@@ -49,6 +49,7 @@ child = exec(command, function(error, xmlResponse, stderr){
       sessionID = result.AuthenticateLoginResult.SessionID;
   });
 
+console.log(sessionID);
 // Now use the sessionID to poll this user's account and get readings for all thermostats....
   curlRequest = `curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=${sessionID}'`;
 
