@@ -1,0 +1,2054 @@
+    1  exit
+    2  ls
+    3  cd Desktop
+    4  cd DigitalCrafts
+    5  ls
+    6  cd unit1
+    7  ls
+    8  cd linux101
+    9  cd /
+   10  cd ~
+   11  ls -al .*
+   12  ls .zsh*
+   13  cp .zshrc .zshrc.backup
+   14  atom .zshrc
+   15  man locate
+   16  locate .zshrc
+   17  locate -i .zshrc
+   18  cd Desktop
+   19  cd DigitalCrafts
+   20  ls
+   21  cd unit1
+   22  ls
+   23  python python101.py
+   24  ls
+   25  mkdir python101
+   26  mv python101.py python101
+   27  cd python101
+   28  ls
+   29  python
+   30  python cond.py
+   31  python guessTheNumber.py
+   32  cp guessTheNumber.py guessTheNumber2.py
+   33  python guessTheNumber2.py
+   34  cp guessTheNumber2.py guessTheNumber3.py
+   35  python guessTheNumber3.py
+   36  cp guessTheNumber3.py guessTheNumber4.py
+   37  python guessTheNumber4.py
+   38  cp guessTheNumber4.py guessTheNumber5.py
+   39  python guessTheNumber5.py
+   40  ls -al
+   41  git init
+   42  git remote add origin https://github.com/YankeeSoccerNut/python101.git\ngit push -u origin master
+   43  git add .
+   44  git remote add origin https://github.com/YankeeSoccerNut/python101.git\ngit push -u origin master
+   45  git status
+   46  git commit -m "first commit"
+   47  git remote add origin https://github.com/YankeeSoccerNut/python101.git\ngit push -u origin master
+   48  ls
+   49  python guessTheNumber5.py
+   50  python dayofweek.py
+   51  git status
+   52  git add .
+   53  git status
+   54  exit
+   55  pwd
+   56  cd Desktop/DigitalCrafts/unit1/python101
+   57  ls
+   58  python dayofweek.py
+   59  python helloyou.py
+   60  cd ~
+   61  ls
+   62  cd Sites
+   63  ls
+   64  ls -al
+   65  cat .localized
+   66  cd ..
+   67  cat scott.anderson@oracle.com.ams
+   68  cd PythonHardway
+   69  ls
+   70  touch test.txt
+   71  rm test.txt
+   72  ls
+   73  cd Desktop/DigitalCrafts
+   74  ls
+   75  cd unit1
+   76  ls
+   77  cd pyt
+   78  cd python101
+   79  git status
+   80  git add .
+   81  git status
+   82  git commit -m "Added Extra python"
+   83  git push
+   84  exit
+   85  ls
+   86  cd Desktop/DigitalCrafts/unit1
+   87  ls
+   88  cd python101
+   89  cd ~/Down
+   90  cd ~/Downloads
+   91  ls
+   92  cd ../Desktop
+   93  ls
+   94  cd DigitalCrafts/unit1/python101
+   95  ls
+   96  exit
+   97  echo $0
+   98  cd ..
+   99  ls
+  100  exit
+  101  ls
+  102  cd Desktop/DigitalCrafts/unit1/python101
+  103  ls
+  104  python guessTheNumber5.py
+  105  ls
+  106  exit
+  107  ls
+  108  cd Desktop/DigitalCrafts/unit1/python101
+  109  touch testfile
+  110  rm testfile
+  111  python loops.py
+  112  ls
+  113  ls -la
+  114  cd .git
+  115  ls
+  116  cat config
+  117  cd hooks
+  118  ls
+  119  cat update.sample
+  120  cd ..
+  121  ls
+  122  python loops.py
+  123  git status
+  124  python function_practice.py
+  125  python dc_challenge.py
+  126  python function_practice.py
+  127  python dc_challenge.py
+  128  pwd
+  129  python string.py
+  130  python cipher.py
+  131  python lists.py
+  132  git status
+  133  git add .
+  134  git commit -m "Lots of exercises"
+  135  git push
+  136  python
+  137  python lists.py
+  138  python
+  139  python lists.py
+  140  pwd
+  141  python primeFactor.py
+  142  python dictionaries.py
+  143  pwd
+  144  cd ..
+  145  ls
+  146  mkdir goblingame
+  147  ls
+  148  pip install pygame
+  149  sudo pip install pygame
+  150  sudo -H pip install pygame
+  151  python
+  152  ls
+  153  cd goblingame
+  154  ls
+  155  python game.py
+  156  mkdir images
+  157  mv ~/Downloads/images ./images
+  158  cd images
+  159  ls
+  160  pwd
+  161  ls
+  162  cd images
+  163  ls
+  164  pwd
+  165  mv *.* ..
+  166  ls
+  167  cd ..
+  168  ls
+  169  rmdir images
+  170  cd images
+  171  ls
+  172  ls -al
+  173  rm *.*
+  174  ls
+  175  ls -al
+  176  cd ..
+  177  python game.py
+  178  pwd
+  179  ls
+  180  cd images
+  181  ls
+  182  rm -r images
+  183  ls
+  184  cd ..
+  185  python game.py
+  186  pwd
+  187  python game.py
+  188  cd Desktop/DigitalCrafts/unit1/python101
+  189  ls
+  190  python game.py
+  191  cd Desktop/DigitalCrafts/unit1
+  192  ls
+  193  cd goboingame
+  194  cd goblingame
+  195  ls
+  196  python game.py
+  197  cd ..
+  198  cd python101
+  199  python primeFactor.py
+  200  sudo python primeFactor.py
+  201  python primeFactor.py
+  202  cd ..
+  203  cd goblingame
+  204  python game.py
+  205  cd images
+  206  ls
+  207  cd ..
+  208  ls
+  209  cd ..
+  210  ls
+  211  mv LordVader2.png ./unit1/goblingame/images
+  212  ls
+  213  cd unit1/goblingame
+  214  cd images
+  215  ls
+  216  rm lordvader.png
+  217  mv LordVader2.png LordVader.png
+  218  cd ..
+  219  python game.py
+  220  cd Desktop/DigitalCrafts/unit1/goblingame
+  221  python game.py
+  222  cd images
+  223  ls
+  224  cd ..
+  225  python game.py
+  226  cd Desktop/DigitalCrafts/unit1/goblingame
+  227  python game.py
+  228  exit
+  229  cd Desktop/DigitalCrafts/unit1/goblingame
+  230  python game.py
+  231  cd images
+  232  ls
+  233  cd ..
+  234  ls
+  235  python game.py
+  236  cd Desktop/DigitalCrafts/unit1/goblingame
+  237  python game.py
+  238  exit
+  239  cd Desktop/DigitalCrafts/unit1/goblingame
+  240  python game.py
+  241  exit
+  242  cd Desktop/DigitalCrafts/unit1/goblingame
+  243  python game.py
+  244  cd Desktop/DigitalCrafts/unit1/gob
+  245  ls
+  246  cd gob
+  247  pwd
+  248  cd Desktop/DigitalCrafts/unit1
+  249  ls
+  250  cd goblingame
+  251  python game.py
+  252  cd Desktop/DigitalCrafts/unit1/ls
+  253  ls
+  254  cd Desktop/DigitalCrafts/unit1
+  255  ls
+  256  mv goblingame spaceEvader
+  257  cd spaceEvader
+  258  ls
+  259  p
+  260  python game.py
+  261  git init
+  262  git add .
+  263  git commit -m "first commit"
+  264  git status
+  265  git remote add origin https://github.com/YankeeSoccerNut/spaceEvader.git\ngit push -u origin master
+  266  python game.py
+  267  cd Desktop/DigitalCrafts/unit1
+  268  ls
+  269  cd spaceEvader
+  270  python game.py
+  271  cd Desktop/DigitalCrafts/unit1
+  272  cd spaceEvader
+  273  python game.py
+  274  cd Desktop/DigitalCrafts/unit1/spaceEvader
+  275  python game.py
+  276  git status
+  277  git add .
+  278  git commit -m "Entertaining version 1"
+  279  git push
+  280  python game.py
+  281  ls
+  282  mkdir sounds
+  283  ls
+  284  python game.py
+  285  git status
+  286  git add .
+  287  git commit -m "added music"
+  288  git push
+  289  python game.py
+  290  git add .
+  291  git commit -m "Added Sound Effects"
+  292  git push
+  293  python game.py
+  294  ls
+  295  cd sounds
+  296  ls
+  297  rm jabbalaugh.wav
+  298  rm lightsaberpulse.wav
+  299  ls
+  300  git status
+  301  git add .
+  302  git commit -m "Added Sound Effects with Channels"
+  303  git push
+  304  git status
+  305  cd ..
+  306  ls
+  307  ls -al
+  308  cd sounds
+  309  ls
+  310  ls -al
+  311  cd ..
+  312  git status
+  313  git help
+  314  git diff game.py
+  315  ls
+  316  git add .
+  317  git commit -m "Added TODO, squashed hero image bug"
+  318  git push
+  319  cd ~
+  320  pwd
+  321  mkdir DivaTest
+  322  cd DivaTest
+  323  ls
+  324  ls s
+  325  ls
+  326  python SampleDiva.py
+  327  pip install virtualenv
+  328  \nvirtualenv ~/virtualenvironment/
+  329  ls
+  330  ls -al
+  331  source activate
+  332  cd ~/virtualenvironment
+  333  ls
+  334  cd ..
+  335  ls
+  336  ls v
+  337  ls virtualenvironment
+  338  rm -r virtualenvironment
+  339  ls
+  340  cd DivaTest
+  341  \nvirtualenv ./
+  342  ls
+  343  bin/source/activate
+  344  ls
+  345  cd bin
+  346  ls
+  347  activate
+  348  source activate
+  349  cd ..
+  350  pip install diva
+  351  ls
+  352  cd bin
+  353  ls
+  354  deactivate
+  355  cd ..
+  356  rm -r DivaTest
+  357  ls
+  358  mkdir DivaTest
+  359  ls
+  360  cd DivaTest
+  361  virtualenv -p python3 .
+  362  source /bin/activate
+  363  ls
+  364  cd bin
+  365  source activate
+  366  cd ..
+  367  ls
+  368  which python
+  369  python --version
+  370  pip install diva
+  371  ls
+  372  python SampleDiva.py
+  373  ls
+  374  pip install pandas
+  375  cd ..
+  376  ls
+  377  deactivate
+  378  pwd
+  379  cd Desktop/DigitalCrafts/unit1/spaceEvader
+  380  ls
+  381  cd ..
+  382  mkdir objects
+  383  cd objects
+  384  touch objects101.py
+  385  cd ..
+  386  cd spaceEvader
+  387  python game.py
+  388  cd ..
+  389  mkdir text_rpg
+  390  cd text_rpg
+  391  touch non-class.py
+  392  python non-class.py
+  393  python class.py
+  394  ls
+  395  cd ..
+  396  ls
+  397  cd objects
+  398  ls
+  399  python class.py
+  400  ls
+  401  python class.py
+  402  ls
+  403  python class-rpg.py
+  404  cd ..
+  405  cd spaceEvader
+  406  python game.py
+  407  cd Desktop/DigitalCrafts/unit1/objects
+  408  ls
+  409  python
+  410  ls
+  411  import Person from objects101
+  412  python
+  413  python objects101.py
+  414  import Person from objects101
+  415  python
+  416  python objects101.py
+  417  python class-rpg.py
+  418  python objects101.py
+  419  python class-rpg.py
+  420  man say
+  421  say ?
+  422  say -?
+  423  man say
+  424  say -v ?
+  425  say 'hello'
+  426  say -v
+  427  say -v ?
+  428  say -v -?
+  429  man say
+  430  man say "?"
+  431  man say -v "?"
+  432  python class-rpg.py
+  433  man say
+  434  python class-rpg.py
+  435  python objects101.py
+  436  python class-rpg.py
+  437  ls
+  438  mv objects101.* ../text_rpg
+  439  ls
+  440  cd ..
+  441  ls
+  442  mv text_rpg objects101
+  443  ls
+  444  mv objects textrpg
+  445  ls
+  446  cd textrpg
+  447  ls
+  448  git init
+  449  touch .gitignore
+  450  nano .gitignore
+  451  git add .
+  452  git commit -m "First commit"
+  453  git remote add origin https://github.com/YankeeSoccerNut/textrpg.git\ngit push -u origin master
+  454  cd ..
+  455  cd objects
+  456  ls
+  457  mv *.py ./textrpg
+  458  ls
+  459  mv Hero.py ../textrpg
+  460  mv *.py ../textrpg
+  461  ls
+  462  cd ..
+  463  rm objects
+  464  rm -r objects
+  465  ls
+  466  cd textrpg
+  467  git add .
+  468  git commit -m "Second commit"
+  469  ls
+  470  git push
+  471  python class-rpg.py
+  472  2
+  473  python class-rpg.py
+  474  python
+  475  python class-rpg.py
+  476  python
+  477  python class-rpg.py
+  478  python
+  479  ls
+  480  python class-rpg.py
+  481  cd Desktop/DigitalCrafts/unit1
+  482  mkdir shooter
+  483  cd shooter
+  484  atom .
+  485  python game.py
+  486  ls
+  487  mkdir images
+  488  ls
+  489  cd ~
+  490  cd Desktop
+  491  ls *.png
+  492  cd ..
+  493  cd Downloads
+  494  ls *.png
+  495  cd ..
+  496  cd scott
+  497  ls
+  498  cd ..
+  499  cd scott
+  500  cd Desktop/DigitalCrafts
+  501  ls
+  502  mv LordVader.png unit1/shooter/images
+  503  cd Desktop/DigitalCrafts/unit1/shooter
+  504  python game.py
+  505  git init
+  506  nano .gitignore
+  507  git add .
+  508  git commit "First Commit"
+  509  git commit -m "First Commit"
+  510  git remote add origin https://github.com/YankeeSoccerNut/shooter.git\ngit push -u origin master
+  511  cd ..
+  512  ls
+  513  cd text rpg
+  514  cd textrpg
+  515  git status
+  516  ls .git*
+  517  cd ..
+  518  ls
+  519  cd textrpg
+  520  nano .gitignore
+  521  git add .
+  522  git status
+  523  git commit -m "Got Item Subclassing Added"
+  524  git push
+  525  cd ..
+  526  cd python101
+  527  git status
+  528  git add .
+  529  git commit -m "Fun with Primes"
+  530  git push
+  531  cd ..
+  532  ls
+  533  cd CLI_Basics
+  534  cd ..
+  535  cd linux101
+  536  git add .
+  537  git commit -m "another commit"
+  538  git push
+  539  cd ..
+  540  ls
+  541  cd spaceEvader
+  542  git add .
+  543  git status
+  544  git commit -m "worked out sound effects channel errors"
+  545  git push
+  546  cd ..
+  547  cd shooter
+  548  atom .
+  549  say hello
+  550  say "Hello"
+  551  python game.py
+  552  cd unit1/shooter/images
+  553  ls
+  554  python game.py
+  555  git status
+  556  git add .
+  557  git commit -m "Got basic collision working"
+  558  git push
+  559  python game.py
+  560  git add .
+  561  git commit -m "Got firing direction implemented"
+  562  git push
+  563  python game.py
+  564  git status
+  565  git add .
+  566  git commit -m "Refined fire_direction with namedtuple JoyStick"
+  567  git push
+  568  python GIFImage.py
+  569  activate
+  570  ls
+  571  python GIFImage.py
+  572  pip install pipenv
+  573  sudo pip install pipenv
+  574  pipenv
+  575  git status
+  576  virutalenv 
+  577  virtualenv
+  578  which python
+  579  virtualenv venv .
+  580  virtualenv venv
+  581  which python
+  582  activate
+  583  ls
+  584  source venv/activate
+  585  cd venv
+  586  ls
+  587  cd ..
+  588  source venv/bin/activate
+  589  pip install pygame
+  590  pip install PIL
+  591  pip install Image
+  592  python GIFImage.py
+  593  pip install PIL
+  594  pip install Pillow
+  595  python GIFImage.py
+  596  pip uninstall PIL
+  597  pip uninstall Pillow
+  598  pip install Pillow
+  599  python GIFImage.py
+  600  ls
+  601  cd Imaging-1.1.7
+  602  ls
+  603  cat setup.py
+  604  python setup.py
+  605  ls
+  606  cd PIL
+  607  ls
+  608  cd ..
+  609  mv -r ./PIL ..
+  610  mv -r ./PIL ../PIL
+  611  cd ..
+  612  ls
+  613  mkdir PIL
+  614  cd Imaging-1.1.7
+  615  mv -r ./PIL ../PIL
+  616  mv ./PIL ../PIL
+  617  cd ..
+  618  ls
+  619  cd PIL
+  620  ls
+  621  cd ..
+  622  ls
+  623  cd PIL
+  624  ls
+  625  cd PIL
+  626  mv *.* ../PIL
+  627  ls
+  628  cd ..
+  629  ls
+  630  cd PIL
+  631  mv *.* ..
+  632  ls
+  633  cd ..
+  634  rm PIL
+  635  rm -r PIL
+  636  ls
+  637  python GIFImage.py
+  638  cd ..
+  639  python GIFImage.py
+  640  deactivate
+  641  source venv/bin/activate
+  642  which python
+  643  python --version
+  644  ls
+  645  python game.py
+  646  cd ..
+  647  ls
+  648  cd ..
+  649  ls
+  650  cd ..
+  651  ls
+  652  mkdir kingsnake
+  653  cd kingsnake
+  654  git init
+  655  touch game.py
+  656  git add .
+  657  git commit -m "First Commit"
+  658  git remote add origin https://github.com/YankeeSoccerNut/KingSnake.git\ngit push -u origin master
+  659  mkdir images
+  660  mkdir sounds
+  661  git add .
+  662  git commit -m "Added Structure for Images and Sounds"
+  663  git push
+  664  ls
+  665  atom .
+  666  virtualenv venv
+  667  source venv/bin/activate
+  668  which python
+  669  python --version
+  670  pip install pygame
+  671  pip install collections
+  672  python game.py
+  673  ls
+  674  cd ..
+  675  cd unit1
+  676  ls
+  677  cd shooter
+  678  cp images/monster.png ../../kingsnake/images
+  679  cp images/monster.png ../../kingsnake/images/
+  680  cp images/monster1.png ../../kingsnake/images
+  681  cd ../../kingsnake
+  682  python game.py
+  683  ls
+  684  cd images
+  685  ls
+  686  python game.py
+  687  cd ..
+  688  python game.py
+  689  cd ..
+  690  cd unit1
+  691  cd spaceEvader
+  692  ls
+  693  cd images
+  694  ls
+  695  cp Yoda.png ../../../kingsnake/images
+  696  cd ..
+  697  cd kingsnake
+  698  python game.py
+  699  git status
+  700  git add .
+  701  git commit -m "Before implementing Sprite"
+  702  git push
+  703  python game.py
+  704  cd ..
+  705  cd unit1
+  706  ls
+  707  cd spaceEvader
+  708  atom .
+  709  cd ../../
+  710  cd kingsnake
+  711  python game.py
+  712  cp ../
+  713  cp ../unit1/spaceEvader/images/LordVader.png ./images
+  714  ls ./images
+  715  python game.py
+  716  python
+  717  python game.py
+  718  git add .
+  719  git commit -m "Initial Game Play working"
+  720  git push
+  721  python game.py
+  722  git status
+  723  git add .
+  724  git commit -m "Got basic play through levels implemented"
+  725  git push
+  726  git diff
+  727  git diff ?
+  728  git diff game.py
+  729  atom .
+  730  python game.py
+  731  pwd
+  732  python game.py
+  733  git add .
+  734  git commit -m "Added press C to continue"
+  735  git push
+  736  python game.py
+  737  cd ..
+  738  ls
+  739  cd unit1
+  740  ls
+  741  cd shooter
+  742  ls
+  743  cd ..
+  744  cd shooter
+  745  atom .
+  746  cd ..
+  747  cd kingsnake
+  748  python game.py
+  749  ls images
+  750  python game.py
+  751  git add .
+  752  git commit -m "Discovered subsurface for playing_area"
+  753  git push
+  754  python game.py
+  755  git push
+  756  python game.py
+  757  git add .
+  758  git commit -m "Figured out subsurfaces, pause on closing screen"
+  759  git push
+  760  python game.py
+  761  cp ~/Downloads/LOL_-_King_Of_The_Hill_Theme_\(mp3.pm\).mp3 ./sounds
+  762  cd sounds
+  763  ls
+  764  mv *.mp3 kingohill.mp3
+  765  ls
+  766  mv *.mp3 kingohill.mp3
+  767  ls
+  768  cd ..
+  769  python game.py
+  770  git add .
+  771  git commit -m "added background music, cleaned up logging"
+  772  git push
+  773  cd ..
+  774  mkdir unit2
+  775  cd unit2
+  776  mkdir html101
+  777  cd html101
+  778  atom .
+  779  pwd
+  780  ls
+  781  git init
+  782  git add .
+  783  git commit "First Commit"
+  784  git commit -m "First Commit"
+  785  git remote add origin https://github.com/YankeeSoccerNut/html101.git\ngit push -u origin master
+  786  deactivate
+  787  atom .
+  788  ls
+  789  rm test.html
+  790  ls
+  791  mkdir images
+  792  mv *.jpg images
+  793  ls
+  794  ls images
+  795  cd ~
+  796  cd Pictures
+  797  ls
+  798  ls IMG*.jpg
+  799  ls IMG_*.jpg
+  800  ls IMG*
+  801  ls IMG*.JPG
+  802  cp IMG*.JPG ~/Desktop/DigitalCrafts/unit2/html101/images
+  803  cd /
+  804  cd ~
+  805  cd Desktop/DigitalCrafts/kingsnake
+  806  ls
+  807  python game.py
+  808  cd ../unit2
+  809  ls
+  810  cd html101
+  811  git add .
+  812  git commit -m "got click on hover area working"
+  813  git push
+  814  cd ..
+  815  mkdir css101
+  816  cd css101
+  817  touch index.html
+  818  atom .
+  819  ls
+  820  cd Desktop/DigitalCrafts/unit2/
+  821  ls
+  822  cd css101
+  823  ls
+  824  cd fbclone
+  825  touch fbclone.html
+  826  touch fbstyles.css
+  827  exit
+  828  ls
+  829  cd desktop
+  830  ls
+  831  ls di
+  832  ls di*
+  833  cd ..
+  834  mv ./Desktop/DigitalCrafts -r .
+  835  cd Desktop
+  836  ls
+  837  cd digital
+  838  cd ..
+  839  ls
+  840  cd DigitalCrafts
+  841  ls
+  842  cd unit2
+  843  ls
+  844  cd css101
+  845  ls
+  846  cd fbclone
+  847  atom .
+  848  cd DigitalCrafts/unit2/css101
+  849  ls
+  850  cd fbclone
+  851  atom .
+  852  cd ..
+  853  ls
+  854  cd ..
+  855  ls
+  856  cd html101
+  857  ls
+  858  cd ..
+  859  ls
+  860  cd unit1
+  861  cd ..
+  862  cd kingsnake
+  863  ls
+  864  gst
+  865  git status
+  866  ls 
+  867  ls -al
+  868  git
+  869  cd ~
+  870  softwareupdate -l
+  871  xcode-select -p
+  872  gcc
+  873  xcode-select --install
+  874  exit
+  875  cd dig
+  876  ls
+  877  cd DigitalCrafts
+  878  ls
+  879  cd kingsnake
+  880  gst
+  881  cd ./unit1
+  882  cd ..
+  883  cd unit1
+  884  ls
+  885  cd spaceEvader
+  886  cd ..
+  887  cd shooter
+  888  cd ..
+  889  ls
+  890  cd textrpg
+  891  cd ..
+  892  cd goblingame
+  893  ls
+  894  cd ..
+  895  cd goblingame
+  896  ls
+  897  ls -1l
+  898  ls -al
+  899  cd ..
+  900  ls
+  901  cd ..
+  902  cd unit2
+  903  ls
+  904  cd css101
+  905  ls
+  906  cd ..
+  907  ls
+  908  cd html101
+  909  ls
+  910  git add .
+  911  ls
+  912  git commit -m "cleanup"
+  913  git push
+  914  cd ~
+  915  upgrade_oh_my_zsh
+  916  cd DigitalCrafts
+  917  ls
+  918  cd unit2/css101
+  919  ls
+  920  touch media-practice.html
+  921  atom .
+  922  bootstrap --v
+  923  cd ~
+  924  cd Downloads
+  925  ls bootstrap-3.3.7-dist
+  926  ls
+  927  ls b*
+  928  mv bootstrap-3.3.7-dist ~
+  929  cd ~
+  930  ls b
+  931  ls
+  932  cd Scott
+  933  ls
+  934  find boot
+  935  ls
+  936  cd Down
+  937  cd Downloads
+  938  ls
+  939  cd ~
+  940  cd bootstrap-3.3.7-dist
+  941  ls
+  942  cd ..
+  943  ls
+  944  cd DigitalCrafts
+  945  cd unit2
+  946  ls
+  947  mkdir bootstrap101
+  948  cd css101
+  949  ls
+  950  cd ..
+  951  cd html101
+  952  ls
+  953  cd ..
+  954  ls
+  955  cd css101
+  956  ls
+  957  cat styles.css
+  958  ls
+  959  cd fbclone
+  960  ls
+  961  mv bootstrap101.html ../../bootstrap101
+  962  mv styles1.css ../../bootstrap101
+  963  cd ../../bootstrap101
+  964  ls
+  965  atom .
+  966  mv ~/Downloads/portfolio-images.zip .
+  967  ls
+  968  unzip portfolio-images.zip
+  969  ls
+  970  cd __MACOSX
+  971  ls
+  972  cd ..
+  973  cd portfolio-images
+  974  ls
+  975  rm index.html
+  976  ls
+  977  cd ..
+  978  ls
+  979  rm -r __MACOSX 
+  980  ls
+  981  git init
+  982  git add .
+  983  gcm "First Commit"
+  984  gcm
+  985  git commit -m "First Commit"
+  986  git add .
+  987  git commit "Used hidden to get visibility on Hero"
+  988  git commit -m "Used hidden to get visibility on Hero"
+  989  cd ..
+  990  ls
+  991  mv youtube.html ./bootstrap101
+  992  ls
+  993  mv ~/Downloads/YouTube-Mock-Site-master.zip .
+  994  ls
+  995  mv YouTube-Mock-Site-master YouTubeMockSite
+  996  ls
+  997  cd YouTubeMockSite
+  998  ls
+  999  git init
+ 1000  git add .
+ 1001  git status
+ 1002  git commit -m "first commit"
+ 1003  git remote add origin https://github.com/YankeeSoccerNut/YouTubeMockSite.git\ngit push -u origin master
+ 1004  cd ..
+ 1005  ls
+ 1006  cd bootstrap101
+ 1007  ls
+ 1008  touch morelayoutpractice.css
+ 1009  ls
+ 1010  ls m
+ 1011  git add .
+ 1012  git commit -m "More Layout Practice"
+ 1013  git push
+ 1014  ls
+ 1015  cd ..
+ 1016  ls
+ 1017  cd bootstrap101
+ 1018  ls
+ 1019  ls you*
+ 1020  rm you*
+ 1021  ls
+ 1022  ls -la
+ 1023  git add .
+ 1024  git commit -m "removed youtube stuff"
+ 1025  git push
+ 1026  git remote add origin https://github.com/YankeeSoccerNut/bootstrap101.git\ngit push -u origin master
+ 1027  cd ..
+ 1028  ls
+ 1029  cd css101
+ 1030  ls
+ 1031  ls -l1
+ 1032  ls -la
+ 1033  git init
+ 1034  git add .
+ 1035  git commit -m "First commit"
+ 1036  git remote add origin https://github.com/YankeeSoccerNut/css101.git\ngit push -u origin master
+ 1037  cd ..
+ 1038  ls
+ 1039  cd html101
+ 1040  cd ..
+ 1041  ls
+ 1042  exit
+ 1043  cd DigitalCrafts/unit2
+ 1044  ls
+ 1045  cd bootstrap101
+ 1046  ls *.py
+ 1047  python q11.py
+ 1048  cd DigitalCrafts
+ 1049  cd unit2
+ 1050  mkdir js101
+ 1051  touch intro.html
+ 1052  rm intro.html
+ 1053  cd js101
+ 1054  touch intro.html
+ 1055  atom intro.html
+ 1056  atom .
+ 1057  ls
+ 1058  mv ~/Downloads/dragon-assets.zip .
+ 1059  unzip dragon-assets.zip
+ 1060  ls
+ 1061  rm -r __MACOSX
+ 1062  ls
+ 1063  mkdir dragon-assets
+ 1064  ls
+ 1065  mv d*.gif ./dragon-assets
+ 1066  mv dragon.png ./dragon-assets
+ 1067  ls
+ 1068  cd dragon-assets
+ 1069  ls
+ 1070  cd ..
+ 1071  ls -la
+ 1072  git init
+ 1073  git add .
+ 1074  git commit -m "first commit"
+ 1075  git remote add origin https://github.com/YankeeSoccerNut/js101.git\ngit push -u origin master
+ 1076  git push
+ 1077  cd ~
+ 1078  ls
+ 1079  cd /
+ 1080  ls .atom
+ 1081  ls atom
+ 1082  dir
+ 1083  ls
+ 1084  cd Applications
+ 1085  ls
+ 1086  ls at
+ 1087  atom
+ 1088  ls at*
+ 1089  cd .atom
+ 1090  ls -la atom
+ 1091  ls -la at*
+ 1092  cd ..
+ 1093  ls
+ 1094  cd Applications
+ 1095  ls
+ 1096  cd ~
+ 1097  cd emmet
+ 1098  ls em
+ 1099  ls
+ 1100  cd HOME
+ 1101  cd $HOME
+ 1102  ls
+ 1103  cd ?
+ 1104  cd /
+ 1105  ls
+ 1106  find emmet
+ 1107  cd Users
+ 1108  ls
+ 1109  cd Shared
+ 1110  ls
+ 1111  cd Library
+ 1112  ls
+ 1113  cd Preferences
+ 1114  ls
+ 1115  cd ..
+ 1116  cd ~
+ 1117  ls
+ 1118  cd emmet
+ 1119  ls -la .emmet
+ 1120  ls -la .
+ 1121  cat .atom
+ 1122  cd .atom
+ 1123  ls
+ 1124  cd packages
+ 1125  ls
+ 1126  cd emmet
+ 1127  ls
+ 1128  cd keymaps
+ 1129  ls
+ 1130  cat emmet.cson
+ 1131  cd ..
+ 1132  ls
+ 1133  cat package.json
+ 1134  ls
+ 1135  touch preferences.json
+ 1136  atom preferences.json
+ 1137  ls
+ 1138  atom preferences.json
+ 1139  cd ~
+ 1140  cd .atom/packages
+ 1141  ls
+ 1142  cd emmet
+ 1143  ls
+ 1144  cat preferences.json
+ 1145  cd lib
+ 1146  ls
+ 1147  cat emmet.coffee
+ 1148  ls
+ 1149  cat emmet.coffee
+ 1150  cd ..
+ 1151  ls
+ 1152  pwd
+ 1153  cd node_modules
+ 1154  ls
+ 1155  cd ..
+ 1156  ls
+ 1157  cat generate-menu.js
+ 1158  cd ..
+ 1159  cd emmet
+ 1160  cd node_modules/emmet/lib
+ 1161  ls
+ 1162  ls m
+ 1163  cd utils
+ 1164  ls
+ 1165  cd ..
+ 1166  cd generator
+ 1167  ls
+ 1168  cd ..
+ 1169  cd action
+ 1170  ls
+ 1171  cat main.js
+ 1172  cd ~
+ 1173  ls
+ 1174  cd emmet
+ 1175  cd .atom
+ 1176  ls
+ 1177  cd packages
+ 1178  ls
+ 1179  cd busy-signal
+ 1180  ls
+ 1181  cat readme.md
+ 1182  cd ..
+ 1183  cd packages/emmet
+ 1184  ls
+ 1185  cd keymaps
+ 1186  ls
+ 1187  cat emmet.cson
+ 1188  cd ..
+ 1189  ls
+ 1190  touch preferences.json
+ 1191  atom preferences.json
+ 1192  cd styles
+ 1193  ls
+ 1194  cd ..
+ 1195  ls
+ 1196  touch snippets.json
+ 1197  atom snippets.json
+ 1198  atom
+ 1199  atom snippets.json
+ 1200  atom
+ 1201  cd ~
+ 1202  cd DigitalCrafts
+ 1203  cd unit2
+ 1204  ls
+ 1205  cd js101
+ 1206  ls
+ 1207  git add .
+ 1208  git commit -m "Separated javascript from html"
+ 1209  git push
+ 1210  git status
+ 1211  git add .
+ 1212  git commit "cosmetic changes"
+ 1213  git commit -m "cosmetic changes"
+ 1214  git push
+ 1215  node
+ 1216  ls
+ 1217  touch node-test.js
+ 1218  node node-test.js
+ 1219  node datealgo.js
+ 1220  npm install datejs
+ 1221  node
+ 1222  npm list datejs
+ 1223  node
+ 1224  pslist -al
+ 1225  kill 9630
+ 1226  node
+ 1227  npm list datejs
+ 1228  node
+ 1229  pwd
+ 1230  cd ..
+ 1231  ls
+ 1232  mkdir countdown
+ 1233  cd countdown
+ 1234  touch index.html
+ 1235  git init
+ 1236  atom .
+ 1237  git status
+ 1238  git add .
+ 1239  git commit -m "changed color scheme and background"
+ 1240  git remote add origin https://github.com/YankeeSoccerNut/countdowntimer.git\ngit push -u origin master
+ 1241  cd ..
+ 1242  ls
+ 1243  cd js101
+ 1244  ls
+ 1245  git status
+ 1246  git add .
+ 1247  git commit -m "fun with canvas"
+ 1248  git push
+ 1249  cat nodetest.js
+ 1250  ls
+ 1251  cat datealgo.js
+ 1252  atom .
+ 1253  node datealgos.js
+ 1254  ls
+ 1255  rm datealgo.js
+ 1256  ls
+ 1257  node --inspect datealgos.js
+ 1258  pwd
+ 1259  node --inspect --debug-brk datealgos.js
+ 1260  node node-test.js
+ 1261  node nodetest.js
+ 1262  node node-test.js
+ 1263  cd ..
+ 1264  mkdir tictactoe
+ 1265  cd tictactoe
+ 1266  touch index.html
+ 1267  atom .
+ 1268  git init
+ 1269  git add .
+ 1270  git commit "first commit..should have done it sooner
+ 1271  git commit -m "first commit..should have done it sooner
+ 1272  git commit -m "first commit..should have done it sooner"
+ 1273  git remote add origin https://github.com/YankeeSoccerNut/tictactoe.git\ngit push -u origin master
+ 1274  cd ..
+ 1275  ls
+ 1276  mkdir jquery
+ 1277  cd jquery
+ 1278  touch index.html
+ 1279  atom .
+ 1280  ../tictactoe
+ 1281  ls
+ 1282  atom .
+ 1283  cd ../jquery
+ 1284  ls
+ 1285  atom .
+ 1286  cd ..
+ 1287  cd tictactoe
+ 1288  ls
+ 1289  git add .
+ 1290  git commit -m "Player constructor, some jQuery, and computerTurn"
+ 1291  git push
+ 1292  cd ..
+ 1293  mkdir forms
+ 1294  touch index.html
+ 1295  touch scripts.js
+ 1296  touch styles.css
+ 1297  atom .
+ 1298  mv index.html ./forms
+ 1299  mv scripts.js ./forms
+ 1300  mv styles.css ./forms
+ 1301  cd forms
+ 1302  ls
+ 1303  atom .
+ 1304  mkdir fancyform1
+ 1305  cd fancyform1
+ 1306  touch forms.css
+ 1307  touch validate.js
+ 1308  touch fancyform1.html
+ 1309  atom .
+ 1310  cd ..
+ 1311  cd tictactoe
+ 1312  git branch jquery
+ 1313  git checkout jquery
+ 1314  ls
+ 1315  git status
+ 1316  git add .
+ 1317  git status
+ 1318  git add .
+ 1319  git commit -m "jqueriefied and working on reducing winCombos"
+ 1320  git push
+ 1321  git push --set-upstream origin jquery
+ 1322  git status
+ 1323  git add .
+ 1324  git commit -m "got filter working! added utterance"
+ 1325  git push
+ 1326  cd ..
+ 1327  mkdir css201
+ 1328  cd css201
+ 1329  touch transform-transition.html
+ 1330  atom .
+ 1331  mkdir blackjack
+ 1332  cd blackjack
+ 1333  touch index.html
+ 1334  touch styles.css
+ 1335  mkdir css
+ 1336  move styles.css css
+ 1337  mv styles.css css
+ 1338  cd css
+ 1339  ls
+ 1340  cd ..
+ 1341  mkdir js
+ 1342  cd js
+ 1343  touch scripts.js
+ 1344  cd ..
+ 1345  atom .
+ 1346  git init
+ 1347  git add .
+ 1348  git commit -m "First Commit"
+ 1349  git remote add origin https://github.com/YankeeSoccerNut/blackjack.git\ngit push -u origin master
+ 1350  mv /Users/Scott/Downloads/cards.zip . 
+ 1351  ls
+ 1352  mv /Users/Scott/Downloads/6d.png . 
+ 1353  mv /Users/Scott/Downloads/6d.png .
+ 1354  mv /Users/Scott/Pictures/6d.png . 
+ 1355  ls
+ 1356  mkdir images
+ 1357  mv *.png images
+ 1358  mv *.zip images
+ 1359  cd images
+ 1360  ls
+ 1361  unzip cards.zip
+ 1362  ld
+ 1363  ls
+ 1364  mv *.png cards
+ 1365  rm __MACOSX
+ 1366  rm -r __MACOSX
+ 1367  ls
+ 1368  rm cards.zip
+ 1369  ls
+ 1370  cd cards
+ 1371  ls
+ 1372  mv 1c.png old1c.png
+ 1373  mv 1d.png old1d.png
+ 1374  mv 1h.png old1h.png
+ 1375  mv 1s.png old1s.png
+ 1376  mv st1c.png 1c.png
+ 1377  mv st1d.png 1d.png
+ 1378  mv st1h.png 1h.png
+ 1379  mv st1s.png 1s.png
+ 1380  git status
+ 1381  git add .
+ 1382  git commit -m "basic game working (no betting yet), playing with some artwork"
+ 1383  git status
+ 1384  git add .
+ 1385  git commit -m "basic game working (no betting yet), playing with some artwork"
+ 1386  git push
+ 1387  ls
+ 1388  cd ..
+ 1389  ls
+ 1390  cd cards
+ 1391  mv steampunknationboard.png ..
+ 1392  cd ..
+ 1393  ls
+ 1394  cd DigitalCrafts/unit2/css201/blackjack
+ 1395  git add .
+ 1396  git commit -m "implemented betting"
+ 1397  git push
+ 1398  ls
+ 1399  cd DigitalCrafts/unit2/ls
+ 1400  ls
+ 1401  pwd
+ 1402  cd DigitalCrafts
+ 1403  cd unit2
+ 1404  cd css201/blackjack
+ 1405  ls
+ 1406  cd images
+ 1407  ls
+ 1408  cd cards
+ 1409  ls
+ 1410  mkdir steam
+ 1411  mv st*.png steam
+ 1412  cd steam
+ 1413  ls
+ 1414  rename
+ 1415  mv -r *.png ..
+ 1416  mv -r *.png ./cards
+ 1417  mv . -r *.png ./cards
+ 1418  mv . *.png ./cards -r
+ 1419  mv ./*.png .. -r
+ 1420  mv ./*.png ../ -r
+ 1421  mv *.png ..
+ 1422  cd ..
+ 1423  ls
+ 1424  rm old*.png
+ 1425  ls
+ 1426  cd ..
+ 1427  ls
+ 1428  cd cards
+ 1429  ls
+ 1430  cd steam
+ 1431  cd ..
+ 1432  rm -r steam
+ 1433  cd ..
+ 1434  cd cards
+ 1435  ls
+ 1436  mv steampunkglove.jpg ..
+ 1437  ls
+ 1438  cd ..
+ 1439  ls
+ 1440  cd ..
+ 1441  git status
+ 1442  git add .
+ 1443  git commit -m "added perspective and trapdoor but no surprises yet"
+ 1444  git push
+ 1445  git add .
+ 1446  git commit -m "added register element, lots of scaling/positioning issues"
+ 1447  git push
+ 1448  cd DigitalCrafts/unit2/css201/blackjack
+ 1449  atom .
+ 1450  cd ..
+ 1451  mv ~/Downloads/animate.css .
+ 1452  ls *.css
+ 1453  pwd
+ 1454  cd blackjack
+ 1455  ls *.css
+ 1456  cd ..
+ 1457  cd blackjack
+ 1458  cd css
+ 1459  ls
+ 1460  mv ../../animate.css .
+ 1461  ls *.css
+ 1462  cd ..
+ 1463  git status
+ 1464  git add .
+ 1465  git commit -m "added animate.css"
+ 1466  git push
+ 1467  git status
+ 1468  git add .
+ 1469  git commit -m "implemented delay on placeCard"
+ 1470  git push
+ 1471  cd ~/.emmet
+ 1472  cd ~
+ 1473  cd .atom
+ 1474  ls
+ 1475  cd packages
+ 1476  ls
+ 1477  cd emmet
+ 1478  ls
+ 1479  cd ~
+ 1480  cd DigitalCrafts/unit2/css201/blackjack
+ 1481  git status
+ 1482  git add .
+ 1483  git commit -m "double down working"
+ 1484  git push
+ 1485  cd ..
+ 1486  atom .
+ 1487  cd ..
+ 1488  mkdir memorygame
+ 1489  cd memorygame
+ 1490  touch index.html
+ 1491  atom .
+ 1492  cd ..
+ 1493  cd blackjack
+ 1494  cd css201/blackjack
+ 1495  ls
+ 1496  cp css ../../memorygame
+ 1497  cp css ../../memorygame -r
+ 1498  cd ../../memorygame
+ 1499  mkdir css
+ 1500  mkdir images
+ 1501  mkdir js
+ 1502  cd ../unit2/css201/blackjack
+ 1503  cd ..
+ 1504  cd css201/blackjack
+ 1505  ls
+ 1506  cp css ../../memorygame/css
+ 1507  cd css
+ 1508  ls
+ 1509  rm animate.css
+ 1510  cp *.* ../../../memorygame/css
+ 1511  cd ..
+ 1512  cd js
+ 1513  ls
+ 1514  cp jq*.js ../../../memorygame/js
+ 1515  cp scripts.js ../../../memorygame/js
+ 1516  cd ../../../memorygame
+ 1517  ls
+ 1518  git init
+ 1519  git add .
+ 1520  git commit -m "first init"
+ 1521  git remote add origin https://github.com/YankeeSoccerNut/MemoryGame.git\ngit push -u origin master
+ 1522  mv ~/Downloads/images.zip .
+ 1523  unzip images.zip
+ 1524  ls
+ 1525  cd images
+ 1526  ls
+ 1527  cd ..
+ 1528  rm -r __MACOSX
+ 1529  ls
+ 1530  cd images
+ 1531  ls
+ 1532  cd ..
+ 1533  cd ls
+ 1534  ls
+ 1535  cd ..
+ 1536  ls
+ 1537  cd unit2
+ 1538  ls
+ 1539  cd css201
+ 1540  ls
+ 1541  mv blackjack .. -r
+ 1542  cd ..
+ 1543  cd blackjack
+ 1544  atom .
+ 1545  pwd
+ 1546  git add .
+ 1547  git commit -m "dynamic card build, all flippable"
+ 1548  git push
+ 1549  cd ..
+ 1550  mkdir jquery201
+ 1551  cd jquery
+ 1552  touch index.html
+ 1553  touch scripts.js
+ 1554  rm index.html
+ 1555  rm scripts.js
+ 1556  cd ..
+ 1557  cd jquery201
+ 1558  touch scripts.js
+ 1559  touch index.html
+ 1560  atom .
+ 1561  cd ..
+ 1562  cd bla
+ 1563  cd black
+ 1564  cd ..
+ 1565  cd css201
+ 1566  cd unit2
+ 1567  cd blackjack
+ 1568  git add .
+ 1569  git commit -m "game message as modal, other styling"
+ 1570  git push
+ 1571  cd ..
+ 1572  ls
+ 1573  cd unit2
+ 1574  ls
+ 1575  mkdir ajax
+ 1576  cd ajax
+ 1577  touch ajax-practice.html
+ 1578  cd ..
+ 1579  mkdir yahoo-ticker
+ 1580  cd yahoo-ticker
+ 1581  touch index.html
+ 1582  touch yahoo-endpoint.html
+ 1583  cd ..
+ 1584  cd blackjack
+ 1585  git status
+ 1586  git add .
+ 1587  git commit -m "flying fly and down-n-dirty dd-button"
+ 1588  git push
+ 1589  git add .
+ 1590  git commit -m "structure in place for insurance"
+ 1591  git push
+ 1592  git add .
+ 1593  git commit -m "implemented insurance"
+ 1594  git push
+ 1595  git status
+ 1596  git checkout -b splithand master
+ 1597  ls
+ 1598  cd ..
+ 1599  mkdir weatherwidget
+ 1600  cd weatherwidget
+ 1601  touch index.html
+ 1602  touch scripts.js
+ 1603  atom .
+ 1604  touch .gitignore
+ 1605  git init
+ 1606  touch config.js
+ 1607  git status
+ 1608  git add .
+ 1609  git status
+ 1610  git rm --cached config.js
+ 1611  git status
+ 1612  git add .
+ 1613  git status
+ 1614  git commit -m "initial commit"
+ 1615  cd ~
+ 1616  cd Downloads
+ 1617  ls *.pem
+ 1618  mv *.pem ~/DigitalCrafts
+ 1619  cd ~/DigitalCrafts
+ 1620  ls
+ 1621  ls -la *.pem
+ 1622  chmod 400 dcKeysForAWS.pem
+ 1623  ls -la *.pem
+ 1624  ssh -i "dcKeysForAWS.pem" ubuntu@ec2-18-221-84-143.us-east-2.compute.amazonaws.com
+ 1625  exit
+ 1626  node
+ 1627  cd DigitalCrafts
+ 1628  ssh -i "dcKeysForAWS.pem" ubuntu@ec2-18-221-219-61.us-east-2.compute.amazonaws.com\n
+ 1629  ls
+ 1630  cd unit2
+ 1631  ls
+ 1632  cd weatherwidget
+ 1633  l
+ 1634  ls
+ 1635  mv myThermoManager ../../
+ 1636  cd ../../
+ 1637  ls
+ 1638  cd myThermoManager
+ 1639  ls
+ 1640  python therm.py
+ 1641  nano curlToHoneywell
+ 1642  cat curlToHoneywell
+ 1643  atom curlToHoneywell
+ 1644  curl -s -k -X 'POST' -H 'Content-Type: aplication/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'ApplicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=yankeesoccernut@gmail.com&UiLanguage=English&Password=f3mJsb29AVYe' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'
+ 1645  curl -X POST -H "Content-Type: application/json" -d '{"Username":"my@email.com","Password":"MyPassword","ApplicationId":"91db1612-73fd-4500-91b2-e63b069b185c"}' 'https://tccna.honeywell.com/WebAPI/api/Session'\n\n
+ 1646  curl -X POST -H "Content-Type: application/json" -d '{"Username":"yankeesoccernut@gmail.com","Password":"f3mJsb29AVYe","ApplicationId":"91db1612-73fd-4500-91b2-e63b069b185c"}' 'https://tccna.honeywell.com/WebAPI/api/Session'\n\n
+ 1647  curl -X POST -H "Content-Type: application/json" -d '{\n        "username": "yankeesoccernut@gmail.com", \n        "password": "f3mJsb29AVYe", \n        "ApplicationId": "91db1612-73fd-4500-91b2-e63b069b185c" \n    }' 'https://rs.alarmnet.com/TotalConnectComfort/WebAPI/api/Session'
+ 1648  curl -X GET "https://api.honeywell.com/oauth2/authorize?response_type=code&redirect_uri=ec2-18-221-219-61.us-east-2.compute.amazonaws.com&client_id=28JfY56K49mVAE0ODgm018GqVYCeJIuG"
+ 1649  exit
+ 1650  cd DigitalCrafts/myThermoManager
+ 1651  mkdir SomeComfort
+ 1652  cd SomeComfort
+ 1653  virtualenv --version
+ 1654  pip update virtualenv
+ 1655  pip ?
+ 1656  pip
+ 1657  pip list
+ 1658  virtualenv venv
+ 1659  source venv/bin/activate
+ 1660  pip install somecomfort
+ 1661  somecomfort --username yankeesoccernut@gmail.com --password f3mJsb29AVYe --login
+ 1662  somecomfort --devices
+ 1663  somecomfort -h
+ 1664  somecomfort --username yankeesoccernut@gmail.com --password f3mJsb29AVYe --login
+ 1665  somecomfort --devices
+ 1666  ls
+ 1667  cd venv
+ 1668  ls
+ 1669  cd lib
+ 1670  ls
+ 1671  cd ..
+ 1672  ls
+ 1673  cd ..
+ 1674  exit
+ 1675  cd DigitalCrafts/myThermoManager
+ 1676  cd SomeComfort
+ 1677  ls
+ 1678  cd venv
+ 1679  ls
+ 1680  cd bin
+ 1681  ls
+ 1682  cd somecomfort
+ 1683  cd ..
+ 1684  cd lib
+ 1685  ls
+ 1686  cd python2.7
+ 1687  ls
+ 1688  cd site-packages
+ 1689  ls
+ 1690  cd somecomfort
+ 1691  ls
+ 1692  atom __init__.py
+ 1693  atom client.py
+ 1694  atom __main__.py
+ 1695  source venv/bin/activate
+ 1696  ls
+ 1697  cd ..
+ 1698  cd ~
+ 1699  cd DigitalCrafts/myThermoManager
+ 1700  cd SomeComfort
+ 1701  ls
+ 1702  source venv/bin/activate
+ 1703  ls
+ 1704  atom client.py
+ 1705  ls
+ 1706  somecomfort -?
+ 1707  somecomfort -h
+ 1708  somecomfort --devices
+ 1709  somecomfort --username yankeesoccernut@gmail.com --password f3mJsb29AVYe --devices
+ 1710  somecomfort -h
+ 1711  somecomfort --username yankeesoccernut@gmail.com --password f3mJsb29AVYe --get_current_temperature
+ 1712  somecomfort -h
+ 1713  somecomfort --username yankeesoccernut@gmail.com --password f3mJsb29AVYe --device 581279
+ 1714  somecomfort --username yankeesoccernut@gmail.com --password f3mJsb29AVYe --get_equipment_output_status
+ 1715  somecomfort --username yankeesoccernut@gmail.com --password f3mJsb29AVYe --get_current_temperature  --device 597696
+ 1716  somecomfort --username yankeesoccernut@gmail.com --password f3mJsb29AVYe --get_current_temperature  --device 594679
+ 1717  exit
+ 1718  curl -X POST  -F username=yankeesoccernut@gmail.com -H 'Authorization: bearer UTg0QTY3NUYxOTpzY3JpcHRyOjlDM0QwMDA2QTNDNUE3QThGNDlDM0IyOUEzQzExMDQz' 'https://api.scriptrapps.io/honeywell/oauth2/grantAccess'
+ 1719  curl -X POST  -F username=yankeesoccernut@gmail.com -H 'Authorization: bearer UTg0QTY3NUYxOQ==' 'https://api.scriptrapps.io/honeywell/oauth2/grantAccess'
+ 1720  curl -s -k -X 'POST' -H 'Content-Type: aplication/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'ApplicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=yankeesoccernut@gmail.com&UiLanguage=English&Password=f3mJsb29AVYe' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'
+ 1721  curl -s -k -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'ApplicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=yankeesoccernut@gmail.com&UiLanguage=English&Password=f3mJsb29AVYe' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'
+ 1722  cd DigitalCrafts/myThermoManager
+ 1723  ls
+ 1724  python
+ 1725  curl -s -k -X ‘GET' -H 'Content-Type: text/json' --data-binary $’sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6' 'https://tccna.honeywell.com/ws/MobileV2.asmx/GetLocations’\nls\nexit
+ 1726  curl -s -k -X ‘GET' -H 'Content-Type: text/json' --data-binary $’sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6' 'https://tccna.honeywell.com/ws/MobileV2.asmx/GetLocations'\nls\nexit
+ 1727  curl -s -k -X ‘GET' -H 'Content-Type: text/json' --data-binary $’sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6' 'https://tccnexit\nls\nexit\nexit
+ 1728  curl -s -k -X ‘GET' -H 'Content-Type: text/json' --data-binary $’sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6' 'https://tccna.honeywell.com/ws/MobileV2.asmx/GetLocations' > return.xml
+ 1729  ls *.xml
+ 1730  cat return.xml
+ 1731  curl -s -k -X ‘GET' -H 'Content-Type: text/json'  'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6' > return.xml\nexit
+ 1732  ls
+ 1733  ls *.xml
+ 1734  cat return.xml
+ 1735  curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6'
+ 1736  curl -H "Accept: application/json" -H "Content-Type: application/json" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6'
+ 1737  curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6'
+ 1738  cd DigitalCrafts/myThermoManager
+ 1739  ls
+ 1740  cat curlToHoneywell
+ 1741  rm curlToHoneywell
+ 1742  cd SomeComfort
+ 1743  ls
+ 1744  venv/bin/activate
+ 1745  source venv/bin/activate
+ 1746  pip install pjson
+ 1747  curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6' | pjson
+ 1748  curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6' > ./getLocations.xml
+ 1749  cd ..
+ 1750  cd SomeComfort
+ 1751  exit
+ 1752  cd DigitalCrafts/myThermoManager
+ 1753  ls
+ 1754  cat GetLocations.xml
+ 1755  cat GetLocations.xml | grep LocationId
+ 1756  ls
+ 1757  cat GetLocations.xml
+ 1758  cat GetLocations.xml | grep <LocationID>
+ 1759  cat GetLocations.xml | awk <LocationID>
+ 1760  cat GetLocations.xml | grep -F "<LocationID>"
+ 1761  cat GetLocations.xml | grep "<LocationID>"
+ 1762  cat GetLocations.xml | grep "<LocationID>" | "<Name>"
+ 1763  cat GetLocations.xml | grep "<LocationID> | <Name>"
+ 1764  ls
+ 1765  cat GetLocations.xml | grep "<LocationID>\| <Name>"
+ 1766  cat GetLocations.xml | grep "<LocationID>\|<Name>"
+ 1767  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>"
+ 1768  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>"
+ 1769  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>"
+ 1770  curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET 'https://tccna.honeywell.com//ws/MobileV2.asmx/GetLocations?sessionID=23423B2B-89BB-4C04-AD91-1BF7961085E6' > getLocations.xml
+ 1771  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>"
+ 1772  cat GetLocations.xml
+ 1773  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>"
+ 1774  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>|\<CanControlSchedule>\<WillControlSchedule"
+ 1775  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>"
+ 1776  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>\|<CanControlSchedule>"
+ 1777  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>\|<CanControlSchedule>\|<WillControlSchedule>"
+ 1778  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>\|<CanControlSchedule>"
+ 1779  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>\|<CanControlSchedule>\|<WillControlSchedule>"
+ 1780  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>\|<CanControlSchedule>\|<WillSupportSchedule>"
+ 1781  cat GetLocations.xml | grep "<LocationID>\|<Name>\|<ThermostatID>\|<Created>\|<ThermostatLocked>\|<DispTemperature>\|<HeatSetpoint>\|<CoolSetpoint>\|<StatusHeat>\|<StatusCool>\|<EquipmentStatus>\|<CanControlSchedule>\|<WillSupportSchedule>" > GetLocationsGREP.xml
+ 1782  ls GetLocationsGREP.xml
+ 1783  cat GetLocationsGREP.xml
+ 1784  cd DigitalCrafts/unit2
+ 1785  mkdir googmaps
+ 1786  cd googmaps
+ 1787  touch index.html
+ 1788  touch scripts.js
+ 1789  touch styles.css
+ 1790  atom .
+ 1791  cd ..
+ 1792  ls
+ 1793  cd yahoo-ticker
+ 1794  ls
+ 1795  cd ..
+ 1796  cd weatherwidget
+ 1797  ls
+ 1798  cp config.js ../googmaps
+ 1799  cd ../googmaps
+ 1800  ls
+ 1801  cat config.js
+ 1802  cd ~
+ 1803  find cities.js
+ 1804  cd DigitalCrafts
+ 1805  cd myThermoManager
+ 1806  ls
+ 1807  atom GetLocations.xm
+ 1808  cd ..
+ 1809  mkdir MeterMiser
+ 1810  cd MeterMiser
+ 1811  git init
+ 1812  touch readme.md
+ 1813  git add .
+ 1814  git commit
+ 1815  git commit -m "Initial Repo"
+ 1816  git remote add origin https://github.com/YankeeSoccerNut/MeterMiser.git\ngit push -u origin master
+ 1817  ls
+ 1818  ls -la
+ 1819  cat .git/config
+ 1820  atom .
+ 1821  cd ..
+ 1822  cd myThermoManager
+ 1823  ls
+ 1824  atom GetLocations.xml
+ 1825  ls
+ 1826  cat GetLocationsGREP.xml
+ 1827  npm list
+ 1828  cd ..
+ 1829  node
+ 1830  brew list
+ 1831  brew start mysql
+ 1832  brew services start mysql
+ 1833  mysql
+ 1834  mysql root
+ 1835  mysql
+ 1836  mysql -u root -p admin
+ 1837  mysql -u root 
+ 1838  cd MeterMiser
+ 1839  mkdir meterMaid
+ 1840  cd meterMaid
+ 1841  npm install xml2js
+ 1842  touch meterMaid.js
+ 1843  atom meterMaid.js
+ 1844  node meterMaid.js
+ 1845  ls
+ 1846  cd ..
+ 1847  ls
+ 1848  cd ..
+ 1849  cd my
+ 1850  cd myThermoManager
+ 1851  ls
+ 1852  cp *.xml ../MeterMiser/meterMaid
+ 1853  cd ..
+ 1854  cd MeterMiser
+ 1855  cd metermaid
+ 1856  ls
+ 1857  node meterMaid.js GetLocations.xml
+ 1858  ls *.xml
+ 1859  node meterMaid.js
+ 1860  node meterMaid.js > meterMaid.out
+ 1861  cat meterMaid.out
+ 1862  pwd
+ 1863  ls
+ 1864  node meterMaid.js > meterMaid.json
+ 1865  exit
+ 1866  brew services list
+ 1867  cd DigitalCrafts/MeterMiser/meterMaid
+ 1868  nodejs meterMaid.js
+ 1869  node meterMaid.js
+ 1870  ls
+ 1871  cd ..
+ 1872  ls
+ 1873  cd meterMaid
+ 1874  ls
+ 1875  node meterMaid.js
+ 1876  cd ..
+ 1877  cd myThermoManager
+ 1878  ls
+ 1879  cd SomeComfort
+ 1880  ls
+ 1881  cd ..
+ 1882  ls
+ 1883  cd ..
+ 1884  find mysql
+ 1885  find mysql.js
+ 1886  cd Digit
+ 1887  cd DigitalCrafts
+ 1888  cd MeterMiser
+ 1889  ls
+ 1890  cd meterMaid
+ 1891  npm install mysql
+ 1892  ls
+ 1893  node meterMaid.js
+ 1894  cd ~
+ 1895  pwd
+ 1896  ls
+ 1897  cd node_modules
+ 1898  ls
+ 1899  cd mysql
+ 1900  ls
+ 1901  cat readme.md
+ 1902  cd ~
+ 1903  ls
+ 1904  cd DigitalCrafts
+ 1905  cd MeterMiser
+ 1906  cd meterMaid
+ 1907  ls
+ 1908  nano myThermostats.txt
+ 1909  node meterMaid.js
+ 1910  ls *.txt
+ 1911  node meterMaid.js
+ 1912  npm install request
+ 1913  node meterMaid.js
+ 1914  brew services list
+ 1915  mysql -u root 
+ 1916  cd ..
+ 1917  ls
+ 1918  mv ~/Desktop/meterMiser_2017-10-18.ddl .
+ 1919  mv ~/Desktop/meterMiser_2017-10-18.sql .
+ 1920  mv *.sql *.ddl
+ 1921  ls
+ 1922  mv *.sql *.ddl
+ 1923  mv meterMiser_2017-10-18.sql *.ddl
+ 1924  cp  meterMiser_2017-10-18.sql *.ddl
+ 1925  ls
+ 1926  cd ..
+ 1927  cd DigitalCrafts
+ 1928  npm install -g express-generator
+ 1929  cd MeterMiser
+ 1930  express meterMaid
+ 1931  ls
+ 1932  cd meterMaid
+ 1933  ls
+ 1934  cd ..
+ 1935  mv meterMaid meterMaid2
+ 1936  express meterMaid
+ 1937  mv meterMaid2/* meterMaid
+ 1938  cd meterMaid
+ 1939  ls
+ 1940  cd public
+ 1941  ls
+ 1942  cd ..
+ 1943  cd routes
+ 1944  ls
+ 1945  cat index.js
+ 1946  cd ..
+ 1947  npm install 
+ 1948  node bin/www
+ 1949  npm install -g nodemon
+ 1950  nodemon
+ 1951  curl -v api.openweathermap.org/data/2.5/weather?zip=30324&units=imperial&appid=6f3f23c0f1a2fcb7edee25d08cb9cf62
+ 1952  curl -v api.openweathermap.org/data/2.5/weather?zip=30324&units=imperial&appid=6f3f23c0f1a2fcb7edee25d08cb9cf6[D[
+ 1953  curl -v http://api.openweathermap.org/data/2.5/weather?zip=30324&units=imperial&appid=6f3f23c0f1a2fcb7edee25d08cb9cf62
+ 1954  cd DigitalCrafts/MeterMiser/meterMaid
+ 1955  node meterMaid.js
+ 1956  curl -s -k -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'ApplicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=yankeesoccernut@gmail.com&UiLanguage=English&Password=f3mJsb29AVYe' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'
+ 1957  node install shelljs
+ 1958  npm install shelljs
+ 1959  node meterMaid.js
+ 1960  npm list
+ 1961  npm list | grep xml
+ 1962  nmp uninstall shelljs
+ 1963  npm uninstall shelljs
+ 1964  node meterMaid.js
+ 1965  npm install xml2js
+ 1966  node meterMaid.js
+ 1967  node meterMaid.js > meterMaid.js.out
+ 1968  node
+ 1969  ls
+ 1970  node
+ 1971  node meterMaid.js
+ 1972  node meterMaid.js . meterMaid.js.out
+ 1973  node meterMaid.js > meterMaid.js.out
+ 1974  node meterMaid.js 
+ 1975  node meterMaid.js > meterMaid.js.out
+ 1976  node meterMaid.js 
+ 1977  node meterMaid.js > meterMaid.js.out
+ 1978  node meterMaid.js 
+ 1979  node meterMaid.js > meterMaid.sql
+ 1980  node meterMaid.js 
+ 1981  node meterMaid.js > meterMaid.sql
+ 1982  node meterMaid.js 
+ 1983  pwd
+ 1984  chmod 777 meterMaid.sh
+ 1985  meterMaid.sh
+ 1986  ls -la *.sh
+ 1987  ls -la
+ 1988  mv metermaid.sh meterMaid.sh
+ 1989  meterMaid.sh
+ 1990  ls -la *.sh
+ 1991  bash meterMaid.sh
+ 1992  meterMaid.sh
+ 1993  bash meterMaid.sh
+ 1994  meterMaid.sh
+ 1995  bash meterMaid.sh
+ 1996  bash
+ 1997  meterMaid.sh
+ 1998  bash meterMaid.sh
+ 1999  ls
+ 2000  rm *.meterMaid.out
+ 2001  cd ~
+ 2002  cd Desktop
+ 2003  ls
+ 2004  touch meterMaid.txt
+ 2005  bash meterMaid.sh
+ 2006  cd `
+ 2007  cd ~
+ 2008  cd DigitalCrafts/MeterMiser/meterMaid
+ 2009  bash meterMaid.sh
+ 2010  git status
+ 2011  ls
+ 2012  mv ~/Desktop/*.ddl .
+ 2013  cd ~
+ 2014  cd Downloads
+ 2015  ls *.ddl
+ 2016  cd ..
+ 2017  cd Desktop
+ 2018  ls *.ddl
+ 2019  cd ~
+ 2020  ls *.ddl
+ 2021  cd Desktop
+ 2022  ls *.sql
+ 2023  mv *.sql ~/DigitalCrafts/MeterMiser
+ 2024  cd ~
+ 2025  cd DigitalCrafts/MeterMiser
+ 2026  ls *.sql
+ 2027  mv meterMiser_2017-10-18.sql meterMiser_2017-10-18.ddl
+ 2028  cd meterMaid
+ 2029  ls
+ 2030  bash meterMaid.sh
+ 2031  exit
+ 2032  cd DigitalCrafts/MeterMiser/meterMaid/ls
+ 2033  cd DigitalCrafts/MeterMiser/meterMaid
+ 2034  ls
+ 2035  bash meterMaid.js
+ 2036  ls
+ 2037  bash meterMaid.sh
+ 2038  cd ..
+ 2039  ls
+ 2040  cd Framework
+ 2041  ls
+ 2042  cat scripts.js
+ 2043  cd ..
+ 2044  ls
+ 2045  cd ..
+ 2046  ls
+ 2047  cd myThermoManager
+ 2048  ls
+ 2049  cd ..
+ 2050  cd MeterMiser
+ 2051  ls
+ 2052  cd meterMaid
+ 2053  ls
+ 2054  atom .
