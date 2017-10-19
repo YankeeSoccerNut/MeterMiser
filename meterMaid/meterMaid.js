@@ -161,12 +161,12 @@ function saveReadings(userLocationData) {
         theThermostatReadingsData = result.GetLocationsResult.Locations[0].LocationInfo[i].Thermostats[0].ThermostatInfo[0].UI[0]
 
         // for Locations table...
-        locationId = theLocationsData.LocationId;
+        locationId = theLocationsData.LocationID;
         name = theLocationsData.Name;
-        addr1 = '';
-        addr2 = '';
-        city = '';
-        state = '';
+        addr1 = null;
+        addr2 = null;
+        city = null;
+        state = null;
         zip5 = theLocationsData.ZipCode;
         zip4 = 0;
 
@@ -215,10 +215,17 @@ function saveReadings(userLocationData) {
 
         // for Readings table...
         thermCreated = theThermostatReadingsData.Created;
-        thermLocked = null;
+
+        if (theThermostatReadingsData.ThermostatLocked == 'true'){
+          thermLocked = true;
+        }
+        else{
+          thermLocked = false;
+        }
+
         dispTemp = theThermostatReadingsData.DispTemperature;
-        heatSetPoint = theThermostatReadingsData.HeatSetPoint;
-        coolSetPoint = theThermostatReadingsData.CoolSetPoint;
+        heatSetPoint = theThermostatReadingsData.HeatSetpoint;
+        coolSetPoint = theThermostatReadingsData.CoolSetpoint;
         displayUnits = theThermostatReadingsData.DisplayedUnits;
         statusHeat = theThermostatReadingsData.StatusHeat;
         statusCool = theThermostatReadingsData.StatusCool;
@@ -265,12 +272,52 @@ function saveReadings(userLocationData) {
         weatherCondition = theLocationsData.CurrentWeather[0].Condition;
 
 
-        console.log(theLocationsData.CurrentWeather[0]);
-        console.log(theThermostatsData.Fan[0]);
+        // console.log(theLocationsData.CurrentWeather[0]);
+        // console.log(theThermostatsData.Fan[0]);
         // console.log(theThermostatsData);
         // console.log(theThermostatReadingsData)
 
-      }
+        // Now we can INSERT into the corresponding tables!
+        // Going to ignore dupe inserts for now
+        // TODO: add error handling
+        // TODO: can break out into functions for formatting, inserting
+
+        var insertLocationSQL = `INSERT INTO Locations (locationId ,name,addr1,addr2,city,state,zip5,zip4) VALUES ( ${locationId}, "${name}", ${addr1}, ${addr2}, ${city}, ${state}, ${zip5}, ${zip4})`;
+
+        var insertThermostatSQL = `INSERT INTO Thermostats (thermostatId,locationId,deviceName,userDefinedName,macId,DomainId,canControlSchedule,willSupportSchedule,fanCanControl,fanCanSetAuto,fanCanSetOn) VALUES (${thermostatId}, ${locationId}, "${deviceName}", "${userDefinedName}", "${macId}", ${DomainId}, ${canControlSchedule}, ${willSupportSchedule}, ${fanCanControl},${fanCanSetAuto}, ${fanCanSetOn})`;
+
+        var insertReadingsSQL = `INSERT INTO Readings (thermostatId,thermCreated,thermLocked,dispTemp,heatSetPoint,coolSetPoint,displayUnits,statusHeat,statusCool,heatLowerSetPt,heatUpperSetPt,coolLowerSetPt,coolUpperSetPt,schedHeatSp,schedCoolSp,systemSwitchPos,equipmentStatus,fanPosition,fanRunning,weatherIsDefined,weatherIsValid,weatherTemp,weatherTempUnit,weatherCondition)  VALUES (${thermostatId}, "${thermCreated}", ${thermLocked}, ${dispTemp}, ${heatSetPoint}, ${coolSetPoint},"${displayUnits}", ${statusHeat}, ${statusCool}, ${heatLowerSetPt}, ${heatUpperSetPt}, ${coolLowerSetPt}, ${coolUpperSetPt}, ${schedHeatSp},${schedCoolSp},${systemSwitchPos}, "${equipmentStatus}", "${fanPosition}", ${fanRunning}, ${weatherIsDefined}, ${weatherIsValid}, ${weatherTemp}, "${weatherTempUnit}", "${weatherCondition}")`;
+
+        console.log(insertLocationSQL);
+        console.log(insertThermostatSQL);
+        console.log(insertReadingsSQL);
+
+        dbConnection.query(insertLocationSQL, function (err, result) {
+          if (err){
+            console.log(err);
+          } else {
+          console.log("Location record inserted");
+          }
+        });
+
+        dbConnection.query(insertThermostatSQL, function (err, result) {
+          if (err){
+            console.log(err);
+          } else {
+            console.log("Thermostat record inserted");
+          }
+        });
+
+        dbConnection.query(insertReadingsSQL, function (err, result) {
+          if (err){
+            console.log(err);
+          } else {
+            console.log("Reading record inserted");
+          }
+        });
+
+
+      }  // for loop through Locations
       // Commit the updated/inserted records...
 
       // Close the database connection...
