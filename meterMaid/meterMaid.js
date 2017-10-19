@@ -160,9 +160,115 @@ function saveReadings(userLocationData) {
         theThermostatsData = result.GetLocationsResult.Locations[0].LocationInfo[i].Thermostats[0].ThermostatInfo[0]
         theThermostatReadingsData = result.GetLocationsResult.Locations[0].LocationInfo[i].Thermostats[0].ThermostatInfo[0].UI[0]
 
-        console.log(theLocationsData);
-        console.log(theThermostatsData);
-        console.log(theThermostatReadingsData)
+        // for Locations table...
+        locationId = theLocationsData.LocationId;
+        name = theLocationsData.Name;
+        addr1 = '';
+        addr2 = '';
+        city = '';
+        state = '';
+        zip5 = theLocationsData.ZipCode;
+        zip4 = 0;
+
+        // for Thermostats table...
+        thermostatId = theThermostatsData.ThermostatID;
+        deviceName = theThermostatsData.DeviceName;
+        userDefinedName = theThermostatsData.UserDefinedDeviceName;
+        macId = theThermostatsData.MacID;
+        DomainId = theThermostatsData.DomainID;
+
+        if (theThermostatsData.CanControlSchedule == 'true'){
+          canControlSchedule = true;
+        }
+        else {
+          canControlSchedule = false;
+        }
+
+        if (theThermostatsData.WillSupportSchedule == 'true'){
+          willSupportSchedule = true;
+        }
+        else {
+          willSupportSchedule = false;
+        }
+
+
+        if (theThermostatsData.Fan[0].CanControl == 'true'){
+          fanCanControl = true;
+        }
+        else{
+          fanCanControl = false;
+        }
+
+        if (theThermostatsData.Fan[0].CanSetAuto == 'true'){
+          fanCanSetAuto = true;
+        }
+        else{
+          fanCanSetAuto = false;
+        }
+
+        if (theThermostatsData.Fan[0].CanSetOn == 'true'){
+          fanCanSetOn = true;
+        }
+        else{
+          fanCanSetOn = false;
+        }
+
+        // for Readings table...
+        thermCreated = theThermostatReadingsData.Created;
+        thermLocked = null;
+        dispTemp = theThermostatReadingsData.DispTemperature;
+        heatSetPoint = theThermostatReadingsData.HeatSetPoint;
+        coolSetPoint = theThermostatReadingsData.CoolSetPoint;
+        displayUnits = theThermostatReadingsData.DisplayedUnits;
+        statusHeat = theThermostatReadingsData.StatusHeat;
+        statusCool = theThermostatReadingsData.StatusCool;
+        heatLowerSetPt = theThermostatReadingsData.HeatLowerSetptLimit;
+        heatUpperSetPt = theThermostatReadingsData.HeatUpperSetptLimit;
+        coolLowerSetPt = theThermostatReadingsData.CoolLowerSetptLimit;
+        coolUpperSetPt = theThermostatReadingsData.CoolUpperSetptLimit;
+        schedHeatSp = theThermostatReadingsData.SchedHeatSp;
+        schedCoolSp = theThermostatReadingsData.SchedCoolSp;
+        systemSwitchPos = theThermostatReadingsData.SystemSwitchPosition;
+        equipmentStatus = theThermostatsData.EquipmentStatus;
+        fanPosition = theThermostatsData.Fan[0].Position;
+
+        if (theThermostatsData.Fan[0].IsFanRunning == 'true'){
+          fanRunning = true;
+        }
+        else{
+          fanRunning = false;
+        }
+
+        if (theThermostatsData.Fan[0].CanSetOn == 'true'){
+          fanCanSetOn = true;
+        }
+        else{
+          fanCanSetOn = false;
+        }
+
+        if (theLocationsData.CurrentWeather[0].IsDefined == 'true'){
+          weatherIsDefined = true;
+        }
+        else{
+          weatherIsDefined = false;
+        }
+
+        if (theLocationsData.CurrentWeather[0].IsValid == 'true'){
+          weatherIsValid= true;
+        }
+        else{
+          weatherIsValid = false;
+        }
+
+        weatherTemp = theLocationsData.CurrentWeather[0].Temperature;
+        weatherTempUnit = theLocationsData.CurrentWeather[0].TempUnit;
+        weatherCondition = theLocationsData.CurrentWeather[0].Condition;
+
+
+        console.log(theLocationsData.CurrentWeather[0]);
+        console.log(theThermostatsData.Fan[0]);
+        // console.log(theThermostatsData);
+        // console.log(theThermostatReadingsData)
 
       }
       // Commit the updated/inserted records...
