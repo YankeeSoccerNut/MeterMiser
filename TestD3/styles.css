@@ -1,0 +1,22 @@
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.body{
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+#temp-info{
+	padding: 40px;
+}
+
+svg{
+	padding: 40px;
+}

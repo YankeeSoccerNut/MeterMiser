@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<link rel="stylesheet" text="text/css" href="styles.css">
+
+	<!-- D3.js -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Custom JS -->
+	
+	<script text="text/javascript" src="config.js"></script>
+	<script text="text/javascript" src="scripts.js"></script>
+
+
+</head>
+<body>
+
+	<form id="weather-form">
+		<label>Please enter a zip code to search for</label>
+		<input type="number" id="zip-code" placeholder="30324" />
+		<button class="btn btn-success" type="submit">Get Weather Details</button>
+	</form>
+
+	<div class="col-sm-12" id="temp-info">
+		<svg class="chart"></svg>
+		
+	</div>
+	
+</body>
+</html>
