@@ -1,5 +1,6 @@
 $(document).ready(()=>{
 
+$("[name='my-checkbox']").bootstrapSwitch();
 $('.mm-signin-form').submit((event)=>{
 
   event.preventDefault()
