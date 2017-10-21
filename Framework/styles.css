@@ -153,7 +153,7 @@ body{
   background-color: white;
 }
 
-.mm-map{
+.mm-map {
   height: 80vh;
 }
 
@@ -179,4 +179,9 @@ body{
 .body-graph{
   float: right;
   margin-right: 15px;
+}
+
+#locations-map {
+  height: 80vh;
+  width: 100%;
 }
