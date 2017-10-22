@@ -1,4 +1,4 @@
-.chart rect {
+/* .chart rect {
   fill: steelblue;
 }
 
@@ -9,14 +9,31 @@
 }
 
 .body{
-	max-width: 80%;
-	margin: 0 auto;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 #temp-info{
-	padding: 40px;
+  padding: 40px;
 }
 
 svg{
-	padding: 40px;
+  padding: 40px;
+}
+ */
+/* From the d3noob.org example */
+body { font: 12px Arial;}
+
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
 }
