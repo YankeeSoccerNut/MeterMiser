@@ -20,7 +20,20 @@ var userIdPass = idPassRecord.split("|");
 var trimmedUserPass = userIdPass[1].trim();
 
 // Now format then make the request for a sessionId....using curl
-var curlRequest = `curl -s -k -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'ApplicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=${userIdPass[0]}&UiLanguage=English&Password=${trimmedUserPass}' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'`
+// var curlRequest = `curl -s -k -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' --data-binary $'applicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04&ApplicationVersion=2&Username=${userIdPass[0]}&UiLanguage=English&Password=${trimmedUserPass}' 'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin'`;
+
+// alternate version had to format this way to avoid having OS interpret the & as 'run in background'
+var curlRequest = `curl -s -k -X 'POST' -H 'Content-Type: application/x-www-form-urlencoded' -H 'User-Agent: Apache-HttpClient/UNAVAILABLE (java 1.4)' \
+'https://tccna.honeywell.com/ws/MobileV2.asmx/AuthenticateUserLogin' \
+-d applicationID=a0c7a795-ff44-4bcd-9a99-420fac57ff04 \
+-d ApplicationVersion=2 \
+-d Username=${userIdPass[0]} \
+-d UiLanguage=English \
+-d Password=${trimmedUserPass}
+`;
+
+console.log(curlRequest);
+
 
 // need to ask the OS to exec the curl command for us...
 var util = require('util');
@@ -33,7 +46,7 @@ var xmlResponse = "";
 //stdout is the response from the OS.  In this case it will be XML.
 child = exec(command, function(error, xmlResponse, stderr){
   console.log("AuthenticateUserLogin...")
-  // console.log('stdout: ' + xmlResponse);
+  console.log('stdout: ' + xmlResponse);
   console.log('stderr: ' + stderr);
 
   if(error !== null) {
@@ -149,7 +162,7 @@ function saveReadings(userLocationData) {
       var dbConnection = mysql.createConnection({
         host     : 'localhost',
         user     : 'root',
-        password : '',
+        password : 'root',
         database : 'meterMiser'
       });
       dbConnection.connect();
