@@ -185,3 +185,9 @@ body{
   height: 80vh;
   width: 100%;
 }
+
+.btn-toggle-map{
+  float: right;
+  padding-right: 30px;
+  padding-top: 15px;
+}
