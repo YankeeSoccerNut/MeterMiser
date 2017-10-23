@@ -19,6 +19,30 @@ body{
   margin: 15% auto 35px;
   min-width: 300px;
   max-width: 450px;
+}
+
+.card-box .card-box-padfont{
+  font-size: 14px;
+  padding: 0px 30px 20px 30px;
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+      max-width: 600px;
+      margin: 80px auto 35px;
+    }
+
+    .card-box .card-box-padfont{
+      font-size: 18px;
+      padding: 0px 10% 20px 10%;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .container {
+      max-width: 800px;
+      margin: 80px auto 35px;
+    }
 
 }
 
@@ -43,10 +67,6 @@ body{
   border-radius: 15px 15px 0px 0px;
 }
 
-.card-box .card-box-padfont{
-  font-size: 14px;
-  padding: 0px 30px 20px 30px;
-}
 
 .input-group{
   width: 100%;
