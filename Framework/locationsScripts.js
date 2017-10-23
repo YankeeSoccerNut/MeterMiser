@@ -1,8 +1,26 @@
 
 // TODO: resolve asynch timing issues with calls to google API...
 // examples...map works intermittently, relying on geocodes return
+var firstTime = true;
 
 $(document).ready(()=>{
+
+// Add a change listener to the Toggle button which is actually a checkbox.
+// hide or show the appropriate div depending on the checked status
+// Map -- show map, hide list of buttons....may need to add listeners to markers in order to navigate to detail view for locations
+// List -- show buttons....add listeners for buttons to navigate to detail view for locations
+
+  $("#list-map-toggle").change(function() {
+    console.log( "#list-map-toggle changed" );
+    if ($(this).is(':checked')) {   // map
+      $(".location-buttons").hide();
+      $("#locations-map").show();
+    } else {                        // list
+      $("#locations-map").hide();
+      $(".location-buttons").show();
+    };
+  });
+
 
 // To load up Google Maps in javascript versus src tag in HTML..
   var googMapURL = `https://maps.googleapis.com/maps/api/js?key=${googleMapsAPIKey}&callback=initMap`;
@@ -26,7 +44,7 @@ $(document).ready(()=>{
   var locations = [];
   var status = '';
   var newButtonHTML = '';
-
+  var currentReadings = [];
 
   $.get(getLocationsURL, function( locations, status ) {
     // display the initial map...
@@ -42,19 +60,29 @@ $(document).ready(()=>{
 
     for (let i=0; i < locations.length; i++){
       // stash the locationId as an attrib in the button for later use (e.g. clicked event)
-      newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" location-id=${locations[i].locationId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}</button>`;
+
+      // get a current reading....TODO:  asynch timing issue on console.log?
+      var getCurrentReadingURL = 'http://ec2-18-221-219-61.us-east-2.compute.amazonaws.com/Now?';
+
+      getCurrentReadingURL += `thermostatId=${locations[i].thermostatId}`;
+      console.log(getCurrentReadingURL);
+
+      $.get(getCurrentReadingURL), function (currentReading, status) {
+        console.log(`currentReading: ${currentReading}`);
+        currentReadings.push(currentReading);
+      };
+
+      newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" thermostat-id=${locations[i].thermostatId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}</button>`;
 
       geocodes.push(markLocation(myGeocoder, locations[i], myMap, markerBounds));
       console.log(`geocodes after push ${geocodes}`);
 
     }; // looping through locations
 
+    console.log(currentReadings);
     // now update the DOM...
     // console.log(newButtonHTML);
     $('.location-buttons').html(newButtonHTML);
-
-    // adjust the map based on where we put the markers....
-    adjustMapView(geocodes, myMap);
 
   });  // getLocations request
 
@@ -95,57 +123,5 @@ $(document).ready(()=>{
       }
     });  // geocode
   }; // markLocation
-
-  function adjustMapView(geocodes, map) {
-    console.log (`geocodes: ${geocodes}`);
-    // var markerBounds = new google.maps.LatLngBounds();
-
-    // for (let i = 0; i < markers.length; i++) {
-    //      map.addOverlay(new GMarker(randomPoint));
-    //      markerBounds.extend(randomPoint);
-    //   }
-    //
-    //   map.setCenter(markerBounds.getCenter(),
-    //                 map.getBoundsZoomLevel(markerBounds));
-    // map.setZoom(10); not sure this is needed if markerBounds.extend works
-  };  // adjustMapView
-
-    // // markers array
-    // var markers = [];
-    // var infoWindow = new google.maps.InfoWindow({});
-    //
-    // cities.map((city)=>{
-    //   createMarker(myMap, city);
-    // });
-    //
-    // // Add submit listener to the form
-    // $('#filter-form').submit(function(event){
-    //   // wipe out all the markers
-    //   markers.map((marker)=>{
-    //     marker.setMap(null);
-    //   });
-    //
-    // $('.city-zoom').click(function () {
-    //   console.log($(this));
-    //   var index = $(this).attr('index)');
-    // });
-    //
-    //   event.preventDefault();
-    //   // user submitted the input box
-    //   // console.log("User submission!");
-    //   var userSearch = $('#filter-input').val().toLowerCase();
-    //   listHTML = '';
-    //   cities.map((city)=>{
-    //     var cityName = city.city.toLowerCase();
-    //     if(cityName.indexOf(userSearch) > -1){
-    //       // The city we are on, contains the search text the user entered
-    //       createMarker(myMap,city);
-    //       listHTML += addCityToList(city);
-    //     }
-    //   });  // cities.map
-    //   $('#cities-table tbody').html(listHTML);
-    //
-    // });  // filter-form submit
-
 
 });  // document ready

@@ -216,7 +216,7 @@ router.get('/Now', function(req, res, next) {
   var idPassRecord = '';
 
   // Use synchronous read as we really can't do anything else until we have the userId and password....
-  idPassRecord = fsIdPass.readFileSync('~/myThermostats.txt', 'utf8');
+  idPassRecord = fsIdPass.readFileSync('./myThermostats.txt', 'utf8');
 
   var userIdPass = idPassRecord.split("|");
   var trimmedUserPass = userIdPass[1].trim();
