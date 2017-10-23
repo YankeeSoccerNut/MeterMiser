@@ -22,7 +22,7 @@ $(document).ready(()=>{
 	var yAxis = d3.axisLeft(y).ticks(24);
 
 	// Get the data
-	d3.json('https://api.myjson.com/bins/1grppr', function(error,data){
+	d3.json('http://ec2-18-221-219-61.us-east-2.compute.amazonaws.com/Readings', function(error,data){
 		console.log(data);
 		var dataFormated = formatJSON(data);
 		console.log(dataFormated);
@@ -41,11 +41,6 @@ $(document).ready(()=>{
 	y.domain(['East Cobb', 'West Cobb', 'Roswell']);
 	
 	
-		
-	
-	
-
-
     // Add the rects.
     svg.selectAll(".rect")
 		.data(dataFormated)
@@ -53,7 +48,7 @@ $(document).ready(()=>{
 		.attr("class", "rect")
 		.attr("x", function(d) {console.log(x(d.dateTimeInfo.dateComplete)); return x(d.dateTimeInfo.dateComplete); }) 
 		.attr("y", function(d) {console.log(y(d.location)); return y(d.location); }) 
-		.attr("width", function(d) {console.log(x(new Date(d.dateTimeInfo.timeStamp + fifteenMinutes)) - x(d.dateTimeInfo.dateComplete)); return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); }) 
+		.attr("width", function(d) {console.log(x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete)); return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); }) 
 		.attr("height", y.bandwidth()) 
 		// .style("opacity", )
 		.style("fill", function(d) {
@@ -76,12 +71,6 @@ $(document).ready(()=>{
 	svg.append("g")
 	    .attr("class", "y axis")
 	    .call(yAxis);
-
-
-
-
-
-
 	})
 
 	
