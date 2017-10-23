@@ -25,7 +25,8 @@ $(document).ready(()=>{
 // To load up Google Maps in javascript versus src tag in HTML..
   var googMapURL = `https://maps.googleapis.com/maps/api/js?key=${googleMapsAPIKey}&callback=initMap`;
 
-  $.ajax({
+  //AJAX returns a 'promise'...we can use the done property to execute the code we want to run when the promise has been fulfilled
+  var getGoogleMap = $.ajax({
       type: 'GET',
       url: googMapURL,
       dataType: 'jsonp',
@@ -34,17 +35,23 @@ $(document).ready(()=>{
       crossDomain: true // tell the browser to allow cross domain calls.
   });  // ajax call to load googleMap
 
+  getGoogleMap.done(buildPage);
 
 // Use the express server to get locations for the user.
 // Our demo is single user only
 // TODO: Add capability to use actual authenticated user credentials to limit locations their own
 
-  var getLocationsURL = 'http://ec2-18-221-219-61.us-east-2.compute.amazonaws.com/Locations';
 
-  var locations = [];
-  var status = '';
-  var newButtonHTML = '';
-  var currentReadings = [];
+  function buildPage() {
+    var getLocationsURL = 'http://ec2-18-221-219-61.us-east-2.compute.amazonaws.com/Locations';
+
+    var locations = [];
+    var status = '';
+    var newButtonHTML = '';
+    var currentReadings = [];
+    var locationReadings = [];
+    var thermostatUI = null;
+
 
   $.get(getLocationsURL, function( locations, status ) {
     // display the initial map...
@@ -67,22 +74,29 @@ $(document).ready(()=>{
       getCurrentReadingURL += `thermostatId=${locations[i].thermostatId}`;
       console.log(getCurrentReadingURL);
 
-      $.get(getCurrentReadingURL), function (currentReading, status) {
-        console.log(`currentReading: ${currentReading}`);
-        currentReadings.push(currentReading);
-      };
+      $.get(getCurrentReadingURL, function (currentReading, status) {
+        locationReadings.push(currentReading);
+        thermostatUI = currentReading.GetThermostatResult.Thermostat[0].UI[0];
+        console.log(thermostatUI.DispTemperature);
+        console.log(thermostatUI.DisplayedUnits);
 
-      newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" thermostat-id=${locations[i].thermostatId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}</button>`;
+        newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" thermostat-id=${locations[i].thermostatId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}: ${parseInt(thermostatUI.DispTemperature)}&#176 ${thermostatUI.DisplayedUnits}</button>`;
+
+        $('.location-buttons').html(newButtonHTML);
+
+      });  // getCurrentReadingURL
+
+      // newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" thermostat-id=${locations[i].thermostatId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}: ${parseInt(thermostatUI.DispTemperature)} ${thermostatUI.DisplayedUnits}</button>`;
 
       geocodes.push(markLocation(myGeocoder, locations[i], myMap, markerBounds));
       console.log(`geocodes after push ${geocodes}`);
 
     }; // looping through locations
 
-    console.log(currentReadings);
+    console.log(`locationReadings: ${locationReadings}`);
     // now update the DOM...
     // console.log(newButtonHTML);
-    $('.location-buttons').html(newButtonHTML);
+    // $('.location-buttons').html(newButtonHTML);
 
   });  // getLocations request
 
@@ -124,4 +138,5 @@ $(document).ready(()=>{
     });  // geocode
   }; // markLocation
 
+}  // buildPage
 });  // document ready
