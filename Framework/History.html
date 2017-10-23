@@ -13,8 +13,10 @@
     <!-- jQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- custom JS -->
-    <script type="text/javascript" src="scripts.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script type="text/javascript" src="graph-history.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+
     <!-- custom CSS  -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 
@@ -39,25 +41,27 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
+        <li><a href="#">History</a></li>
+        
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 
+  <div class="container-history">
+
+    <div style="margin-top: 20px;" class="text-center">
+
+      <button class="history-buttons" id="oneDay" type="btn-location-buttons">Day</button>
+      <button class="history-buttons" id="oneWeek" type="button">Week</button>
+      <button class="history-buttons" id="oneMonth" type="button">Month</button>
+
+    </div>
+
     <div id="graph-container">
 
     </div>
+  </div><!-- container -->
 
     <!-- JS -->
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>

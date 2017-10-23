@@ -1,12 +1,12 @@
 $(document).ready(()=>{
 
 	// Set the dimensions of the canvas / graph
-	var margin = {top: 30, right: 20, bottom: 30, left: 70}; 
-	var width = 1000 - margin.left - margin.right;
+	var margin = {top: 30, right: 20, bottom: 30, left: 70};
+	var width = 350 - margin.left - margin.right;
 	var height = 600 - margin.top - margin.bottom;
 
 	// Adds the svg canvas
-	var svg = d3.select("body") .append("svg")
+	var svg = d3.select("#graph-container") .append("svg")
 	        .attr("width", width + margin.left + margin.right)
 	        .attr("height", height + margin.top + margin.bottom)
 	    .append("g")
@@ -40,17 +40,17 @@ $(document).ready(()=>{
 	// Set Domains
 	x.domain([new Date(mostRecent-oneDay), new Date(mostRecent)]);
 	y.domain(['East Cobb', 'West Cobb', 'Roswell']);
-	
-	
+
+
     // Add the rects.
     svg.selectAll(".rect")
 		.data(dataFormated)
 	.enter().append("rect")
 		.attr("class", "rect")
-		.attr("x", function(d) {return x(d.dateTimeInfo.dateComplete); }) 
-		.attr("y", function(d) {return y(d.location); }) 
-		.attr("width", function(d) {return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); }) 
-		.attr("height", y.bandwidth()) 
+		.attr("x", function(d) {return x(d.dateTimeInfo.dateComplete); })
+		.attr("y", function(d) {return y(d.location); })
+		.attr("width", function(d) {return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); })
+		.attr("height", y.bandwidth())
 		// .style("opacity", )
 		.style("fill", function(d) {
 			if(d.status == "Scheduled"){
@@ -61,7 +61,7 @@ $(document).ready(()=>{
 				return "#cccccc";
 			}
 		})
-		
+
     // Add the X Axis
     svg.append("g")
         .attr("class", "x axis")
@@ -162,7 +162,7 @@ $(document).ready(()=>{
 		var halfHour = 30*60*1000;
 		// console.log(mostRecent);
 
-		// Reset Domains 
+		// Reset Domains
 		x.domain([new Date(mostRecent-timeframe), new Date(mostRecent)]);
 		console.log(new Date(mostRecent-timeframe));
 		y.domain(['East Cobb', 'West Cobb', 'Roswell']);
@@ -176,7 +176,7 @@ $(document).ready(()=>{
 
 	    // Make the changes
 	    //remove unneeded rects
-	    rects.exit().remove(); 
+	    rects.exit().remove();
 	    //add any new rects
 	    rects.enter().append('rect')
 	    	.attr("class", "rect")
@@ -191,10 +191,10 @@ $(document).ready(()=>{
 		//update all rects to new position
 		rects.transition()
 			.duration(750)
-			.attr("x", function(d) {return x(d.dateTimeInfo.dateComplete); }) 
-			.attr("y", function(d) {return y(d.location); }) 
-			.attr("width", function(d) {return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); }) 
-			.attr("height", y.bandwidth()) 
+			.attr("x", function(d) {return x(d.dateTimeInfo.dateComplete); })
+			.attr("y", function(d) {return y(d.location); })
+			.attr("width", function(d) {return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); })
+			.attr("height", y.bandwidth())
 			// .style("opacity", )
 
 
@@ -211,24 +211,3 @@ $(document).ready(()=>{
 	};
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

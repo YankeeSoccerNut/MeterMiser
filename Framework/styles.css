@@ -196,10 +196,6 @@ body{
   font-family: 'Orbitron', sans-serif;
 }
 
-.body-graph{
-  float: right;
-  margin-right: 15px;
-}
 
 #locations-map {
   height: 80vh;
@@ -210,4 +206,23 @@ body{
   float: right;
   padding-right: 30px;
   padding-top: 15px;
+}
+
+#graph-container svg{
+  width: 100%;
+}
+
+.history-buttons{
+  background: #222 url(button-overlay.png) repeat-x;
+  font: 12px Helvetica Neue;
+  color: #fff;
+  text-shadow: 0 -1px 1px #222;
+  padding: 6px 10px 6px 10px;
+  border: 0;
+  border-bottom: 1px solid #222;
+  min-width: 80px;
+  -moz-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px #999;
+  -webkit-border-radius: 5px;
+  -webkit-box-shadow: 0 1px 3px #999;
 }
