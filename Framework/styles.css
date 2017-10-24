@@ -160,9 +160,9 @@ body{
 }
 
 .navbar-metermiser{
-  /*background-color: #FF3B3F;*/
   background: linear-gradient(#FF3B3F, #bc2b2d);
   color: white;
+  border: 0px;
 }
 
 .navbar-metermiser a{
@@ -208,9 +208,6 @@ body{
   padding-top: 15px;
 }
 
-body{
-  padding:  10px;
-}
 
 #graph-container{
   width: 100%;
