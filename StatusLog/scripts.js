@@ -6,7 +6,7 @@ $(document).ready(()=>{
 	var height = 600 - margin.top - margin.bottom;
 
 	// Adds the svg canvas
-	var svg = d3.select("body") .append("svg")
+	var svg = d3.select("#graph") .append("svg")
 	        .attr("width", width + margin.left + margin.right)
 	        .attr("height", height + margin.top + margin.bottom)
 	    .append("g")
@@ -16,18 +16,30 @@ $(document).ready(()=>{
 	// Set the ranges
 	var x = d3.scaleTime().range([0, width]);
 	var y = d3.scaleBand().range([0, height]).paddingInner(0.1).paddingOuter(0.1);
+	var hours = d3.scaleLinear().range([0,height]);
 
 	// Define the axes
 	var xAxis = d3.axisBottom(x).ticks();
 	var yAxis = d3.axisLeft(y).ticks(24);
 
 	// Get the data
-	d3.json('http://ec2-18-221-219-61.us-east-2.compute.amazonaws.com/Readings', function(error,data){
+	d3.json('https://api.myjson.com/bins/1grppr', function(error,data){
 		console.log(data);
 		var dataFormated = formatJSON(data);
 		console.log(dataFormated);
 		var dataByLocation = nestedLocation(dataFormated);
+		
 
+		var legKeys = ['Scheduled', 'Hold - Temporary', 'Hold - Permanent'];
+		var colorArray = ['#27AE60','#F1C40F','#E74C3C']
+
+
+
+		// create the legend
+	  	$('#legend').css('margin-left', margin.left);
+	 	 legKeys.forEach(function(legKey,i){
+	    $('#legend').append('<div class="swatch" style="background:' + colorArray[i] + '"></div>' + legKey);
+	 	 });
 
 	// Timeframe Scales
 	var mostRecent = d3.max(dataFormated, function(d){return d.dateTimeInfo.timeStamp});
@@ -40,6 +52,8 @@ $(document).ready(()=>{
 	// Set Domains
 	x.domain([new Date(mostRecent-oneDay), new Date(mostRecent)]);
 	y.domain(['East Cobb', 'West Cobb', 'Roswell']);
+	hours.domain([0,1]);
+
 	
 	
     // Add the rects.
@@ -52,15 +66,7 @@ $(document).ready(()=>{
 		.attr("width", function(d) {return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); }) 
 		.attr("height", y.bandwidth()) 
 		// .style("opacity", )
-		.style("fill", function(d) {
-			if(d.status == "Scheduled"){
-				return "#008000";
-			}else if(d.status == "Hold"){
-				return "#ff0000";
-			}else{
-				return "#cccccc";
-			}
-		})
+		.style("fill", function(d) {return colorPicker(d.status)})
 		
     // Add the X Axis
     svg.append("g")
@@ -111,9 +117,10 @@ $(document).ready(()=>{
 		if(systemSwitchPos == 1 || systemSwitchPos == 3){
 			if(statusHeat == 0){
 				return 'Scheduled';
-			}
-			else if(statusHeat == 1 || statusHeat == 2){
-				return 'Hold';
+			}else if(statusHeat == 1){
+				return 'Hold - Temporary';
+			}else if(statusHeat == 2){
+				return 'Hold - Permanent'
 			}
 		}
 		else if(systemSwitchPos == 2){
@@ -123,6 +130,18 @@ $(document).ready(()=>{
 		}
 	}
 
+	function colorPicker(status){
+		if(status == 'Off'){
+        		return '#fff'
+        }else if(status == 'Scheduled'){
+        		return '#27AE60'
+        }else if(status == 'Hold - Temporary'){
+        		return '#F1C40F'
+        }else if (status == 'Hold - Permanent'){
+        		return '#E74C3C'
+        }
+	}
+	var location_order = ['East Cobb', 'West Cobb', 'Roswell']
 	function nestedLocation(dataFormated){
 		d3.nest()
 			.key(function(d) {return d.location}).sortKeys(d3.ascending)
@@ -139,6 +158,18 @@ $(document).ready(()=>{
 		this.date = this.dateComplete.getUTCDate();
 		this.hour = this.dateComplete.getUTCHours();
 		this.minute = this.dateComplete.getUTCMinutes();
+	}
+
+	function compareToStoreHours(hour){
+		var storeHours = {
+			open: 14, //9am (shifted 5 for UTC)
+			close: 23  //6pm (shifted 5 for UTC)
+		}
+		if(hour >= storeHours.open && hour < storeHours.close){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	function updateData(domain){
@@ -168,7 +199,7 @@ $(document).ready(()=>{
 		y.domain(['East Cobb', 'West Cobb', 'Roswell']);
 
 		 // Select the section we want to apply our changes to
-	    var svg = d3.select("body");
+	    var svg = d3.select("#graph");
 
 	    // Data join
 	    var rects = svg.selectAll('.rect')
