@@ -21,17 +21,17 @@ What if there were a way to intelligently monitor and alert the small business o
 All team members are students in the [Digital Crafts](https://digitalcrafts.com) September 2017 cohort. This first project applied agile principles to get a MVP completed in a relatively short timeframe.
  
 ##The Team
-* [Scott Anderson](https://https://github.com/YankeeSoccerNut/)  
-**Primary team role:** blah blah <br />
-**Contributions:**  blah blah<br />
+* [Scott Anderson](https://https://github.com/YankeeSoccerNut/) 
+**Primary team role:** Product owner and backend developer<br />
+**Contributions:**  Original concept, backend, and Google Maps integration<br />
 **Key code portions:** All the backend polling, data capture, and API for client GET requests.  Google maps integration with dynamic zoom based on marker boundaries.
  
-* [Mikayla Kelhofer](https://github.com/mkelhofer/)  
+* [Mikayla Kelhofer](https://github.com/mkelhofer/) 
 **Primary team role:** Data Analysis & Visualization<br />
 **Contributions:** History Graph with Interactive Timescale <br />
 **Key code portions:** Data analysis, d3.js charting, dynamic timeline filtering.
  
-* [Michael McFarland](https://github.com/mcfarland422)  
+* [Michael McFarland](https://github.com/mcfarland422) 
 **Primary team role:** Front-End Development and User Interface<br />
 **Contributions:** Built custom HTML layout using Bootstrap framework and created custom CSS styling for all aspects of application. Scheduled daily meetings and worked alongside with Scrum team on application from concept to completion. Developed visual and UI aspects of MeterMiser.<br />
 **Key code portions:** All of the HTML and CSS.  Overall style and flow.
@@ -54,7 +54,7 @@ All team members are students in the [Digital Crafts](https://digitalcrafts.com)
 * Honeywell "red link"
   * [MobileV2](https://tccna.honeywell.com/ws/MobileV2.asmx)
  
-**Other:**  
+**Other:** 
 * 1 Photoshop
 * 2 CyberDuck
 * 3 MySQL
@@ -104,28 +104,21 @@ These issues were resolved going through different reference manuals, working wi
 ##Code Snippets
  
 <!-- Insert code here -->
-We created a front-end service to access the API we built on the back-end.  
+We created a front-end service to access the API we built on the back-end. 
  
 ```JavaScript
 //App Service for accessing the API
-A large portion of the front-end work was c
+var getLocationsURL = 'http://ec2-18-221-219-61.us-east-2.compute.amazonaws.com/Locations';
+$.get(getLocationsURL, function( locations, status ) {....
 ```
  
 ## Screenshots:
-![Homepage](static/img/screenshots/splash_page.png)
-![Search for Destination](static/img/screenshots/search_view.png)
-![Search Result 1](static/img/screenshots/search_result_chipotle.png)
-![Search Result 2](static/img/screenshots/search_result_D1.png)
-![Navigation View](static/img/screenshots/nav_view_chipotle.png)
-![Navigation - Origin](static/img/screenshots/nav_view_origin.png)
-![Navigation - Destination](static/img/screenshots/nav_view_destination.png)
-![Example of Ionic Build in Emulation (Android/Iphone)](static/img/ionic_ss.png)
-<!-- ![iPhone6](static/img/iphone6.png)
-![iPad](static/img/ipad.png)
-![Android](static/img/android.png) -->
+![Login](https://github.com/YankeeSoccerNut/MeterMiser/blob/master/Screen%20Shots/Screen%20Shot%202017-10-24%20at%2012.18.04%20PM.png)
+![Locations](https://github.com/YankeeSoccerNut/MeterMiser/blob/master/Screen%20Shots/Screen%20Shot%202017-10-24%20at%2012.18.59%20PM.png)
+![History](https://github.com/YankeeSoccerNut/MeterMiser/blob/master/Screen%20Shots/Screen%20Shot%202017-10-24%20at%2012.19.50%20PM.png)
+>
  
  
 ##Project History
-10/24/2017 - Demo MVP  
-10/17/2017 - Project Start  
-
+10/24/2017 - Demo MVP 
+10/17/2017 - Project Start 
