@@ -61,7 +61,7 @@ body{
 .card-box .header{
   color: white;
   background: linear-gradient(#FF3B3F, #bc2b2d);
-  padding: 20px;
+  padding: 5px;
   position: relative;
   border-bottom: 1px solid rgba(204, 204, 204, 0.35);
   border-radius: 15px 15px 0px 0px;
@@ -229,4 +229,19 @@ body{
   -moz-box-shadow: 0 1px 3px #999;
   -webkit-border-radius: 5px;
   -webkit-box-shadow: 0 1px 3px #999;
+}
+
+.navbar-brand {
+  height: 60px;
+  padding: 0px;
+  font-size: 22px;
+}
+
+.pad-top25{
+  padding-top: 25px;
+}
+
+.logo-cent-10{
+  margin-left: 10px;
+  padding-top: 10px;
 }
