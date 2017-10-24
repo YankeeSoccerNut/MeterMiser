@@ -80,10 +80,18 @@ $(document).ready(()=>{
       console.log(getCurrentReadingURL);
 
       var midSection = $.get(getCurrentReadingURL, function (currentReading, status) {
+        var currentdate = new Date();
+        var datetime = "Last Read: " + (currentdate.getMonth()+1)
+                + "/"
+                + currentdate.getDate()
+                +  "/"
+                + currentdate.getFullYear() + " @ "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
         locationReadings.push(currentReading);
         thermostatUI = currentReading.GetThermostatResult.Thermostat[0].UI[0];
-        console.log(thermostatUI.DispTemperature);
-        console.log(thermostatUI.DisplayedUnits);
+        console.log(thermostatUI);
 
         locationsAccordianHTML += `
         <div class="panel panel-default">
@@ -93,7 +101,7 @@ $(document).ready(()=>{
         <i class="material-icons dp48">business</i>${locations[i].name}: ${parseInt(thermostatUI.DispTemperature)}&#176 ${thermostatUI.DisplayedUnits}</a></h4>
         </div>
         <div id="collapse${i}" class="panel-collapse collapse">
-        <div class="panel-body">DETAILS IN HERE</div></div></div>`;
+        <div class="panel-body">Heat Set Point: ${parseInt(thermostatUI.HeatSetpoint)}&#176&nbsp;&nbsp;&nbsp;&nbsp;Cool Set Point: ${parseInt(thermostatUI.CoolSetpoint)}&#176<br>${datetime}</div></div></div>`;
 
         console.log(locationsAccordianHTML);
         // newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" thermostat-id=${locations[i].thermostatId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}: ${parseInt(thermostatUI.DispTemperature)}&#176 ${thermostatUI.DisplayedUnits}</button>`;
