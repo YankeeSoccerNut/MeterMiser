@@ -52,15 +52,7 @@ $(document).ready(()=>{
 		.attr("width", function(d) {return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); })
 		.attr("height", y.bandwidth())
 		// .style("opacity", )
-		.style("fill", function(d) {
-			if(d.status == "Scheduled"){
-				return "#008000";
-			}else if(d.status == "Hold"){
-				return "#ff0000";
-			}else{
-				return "#cccccc";
-			}
-		})
+		.style("fill", function(d) {return colorPicker(d.status)})
 
     // Add the X Axis
     svg.append("g")
@@ -73,6 +65,14 @@ $(document).ready(()=>{
 	    .attr("class", "y axis")
 	    .call(yAxis);
 	});
+
+	// create the legend
+	var legKeys = ['Scheduled', 'Hold - Temporary', 'Hold - Permanent'];
+	var colorArray = ['#27AE60','#F1C40F','#E74C3C'];
+  	$('#legend').css('margin-left', margin.left);
+ 	 legKeys.forEach(function(legKey,i){
+    $('#legend').append('<div class="swatch" style="background:' + colorArray[i] + '"></div>' + legKey);
+ 	 });
 
 	// Add Event Listeners
 	$('#oneDay').click(()=>{updateData('oneDay')});
@@ -111,9 +111,10 @@ $(document).ready(()=>{
 		if(systemSwitchPos == 1 || systemSwitchPos == 3){
 			if(statusHeat == 0){
 				return 'Scheduled';
-			}
-			else if(statusHeat == 1 || statusHeat == 2){
-				return 'Hold';
+			}else if(statusHeat == 1){
+				return 'Hold - Temporary';
+			}else if(statusHeat == 2){
+				return 'Hold - Permanent'
 			}
 		}
 		else if(systemSwitchPos == 2){
@@ -121,6 +122,18 @@ $(document).ready(()=>{
 		}else{
 			return 'error';
 		}
+	}
+
+	function colorPicker(status){
+		if(status == 'Off'){
+        		return '#fff'
+        }else if(status == 'Scheduled'){
+        		return '#27AE60'
+        }else if(status == 'Hold - Temporary'){
+        		return '#F1C40F'
+        }else if (status == 'Hold - Permanent'){
+        		return '#E74C3C'
+        }
 	}
 
 	function nestedLocation(dataFormated){
@@ -168,7 +181,7 @@ $(document).ready(()=>{
 		y.domain(['East Cobb', 'West Cobb', 'Roswell']);
 
 		 // Select the section we want to apply our changes to
-	    var svg = d3.select("body");
+	    var svg = d3.select("#graph-container");
 
 	    // Data join
 	    var rects = svg.selectAll('.rect')
@@ -180,14 +193,7 @@ $(document).ready(()=>{
 	    //add any new rects
 	    rects.enter().append('rect')
 	    	.attr("class", "rect")
-	    	.style("fill", function(d) {
-				if(d.equipmentStatus == "Scheduled"){
-					return "#008000";
-				}else if(d.equipmentStatus == "Hold"){
-					return "#ff0000";
-				}else{
-					return "#cccccc"}
-			});
+	    	.style("fill", function(d) {return colorPicker(d.status)})
 		//update all rects to new position
 		rects.transition()
 			.duration(750)
