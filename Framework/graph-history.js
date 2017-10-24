@@ -43,10 +43,10 @@ $(document).ready(()=>{
 	x.domain([new Date(mostRecent-oneDay), new Date(mostRecent)]);
 	y.domain(['East Cobb', 'West Cobb', 'Roswell']);
 
-	// Add StoreHours
-	var startYear =
-	var startMonth = 
-	var startDay = timeframeStart.get(Day);
+	// // Add StoreHours
+	// var startYear =
+	// var startMonth = 
+	// var startDay = timeframeStart.get(Day);
 
 
     // Add the rects.
