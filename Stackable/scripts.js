@@ -39,15 +39,8 @@ $(document).ready(()=>{
 
 	// Get the data
 	d3.json('https://api.myjson.com/bins/1grppr', function(error,data){
-		// console.log(data);
 		var dataFormated = formatJSON(data);
-		// console.log(dataFormated);
 		var dataBySetting = nestedSetting(dataFormated);
-		// console.log(dataBySetting);
-		// console.log(d3.max(dataBySetting, function(d,i) {
-		// 	for(let i = 0; i< d.values.length; i++){
-		// 		return d.values[i].value;	
-		// 	}}))
 		var dataByStoreHours = nestedHours(dataFormated);
 		// console.log(dataByStoreHours);
 		// console.log(d3.max(dataByStoreHours, function(d,i) {

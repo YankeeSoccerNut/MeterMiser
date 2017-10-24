@@ -208,7 +208,11 @@ body{
   padding-top: 15px;
 }
 
-#graph-container svg{
+body{
+  padding:  10px;
+}
+
+#graph-container{
   width: 100%;
 }
 

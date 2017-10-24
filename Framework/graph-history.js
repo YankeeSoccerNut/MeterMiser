@@ -1,8 +1,8 @@
 $(document).ready(()=>{
 
 	// Set the dimensions of the canvas / graph
-	var margin = {top: 30, right: 20, bottom: 30, left: 70};
-	var width = 350 - margin.left - margin.right;
+	var margin = {top: 10, right: 20, bottom: 40, left: 30};
+	var width = 600 - margin.left - margin.right;
 	var height = 600 - margin.top - margin.bottom;
 
 	// Adds the svg canvas
@@ -38,8 +38,11 @@ $(document).ready(()=>{
 	var oneMonth = oneDay*30;
 
 	// Set Domains
+	timeframeStart = new Date(mostRecent-oneDay);
+	mostRecent = new Date(mostRecent);
 	x.domain([new Date(mostRecent-oneDay), new Date(mostRecent)]);
 	y.domain(['East Cobb', 'West Cobb', 'Roswell']);
+
 
 
     // Add the rects.
@@ -47,7 +50,7 @@ $(document).ready(()=>{
 		.data(dataFormated)
 	.enter().append("rect")
 		.attr("class", "rect")
-		.attr("x", function(d) {return x(d.dateTimeInfo.dateComplete); })
+		.attr("x", function(d) {return (x(d.dateTimeInfo.dateComplete)+margin.left); })
 		.attr("y", function(d) {return y(d.location); })
 		.attr("width", function(d) {return x(new Date(d.dateTimeInfo.timeStamp + halfHour)) - x(d.dateTimeInfo.dateComplete); })
 		.attr("height", y.bandwidth())
@@ -58,12 +61,29 @@ $(document).ready(()=>{
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+        .call(xAxis)
+          .selectAll("text")	
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-45)" 
+                });
+
+
     // Add the Y Axis
 
 	svg.append("g")
 	    .attr("class", "y axis")
-	    .call(yAxis);
+	    .call(yAxis)
+	    .selectAll("text")	
+            .style("text-anchor", "middle")
+            .attr("y", -10)
+            .attr("dx", "5px")
+            .attr("dy", "1px")
+            .attr("transform", function(d) {
+                return "rotate(-90)" 
+                });
 	});
 
 	// create the legend
@@ -177,7 +197,7 @@ $(document).ready(()=>{
 
 		// Reset Domains
 		x.domain([new Date(mostRecent-timeframe), new Date(mostRecent)]);
-		console.log(new Date(mostRecent-timeframe));
+		// console.log(new Date(mostRecent-timeframe));
 		y.domain(['East Cobb', 'West Cobb', 'Roswell']);
 
 		 // Select the section we want to apply our changes to
@@ -205,15 +225,29 @@ $(document).ready(()=>{
 
 
 	    svg.select(".x.axis").transition()
-	    	.duration(500) // change the x axis
-	        .call(xAxis);
+	    	.duration(750) // change the x axis
+	        .call(xAxis)
+	         .selectAll("text")	
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", ".15em")
+            .attr("transform", function(d) {
+                return "rotate(-45)" 
+                });
 	    svg.select(".y.axis").transition() // change the y axis
 	        .duration(750)
-	        .call(yAxis);
+	        .call(yAxis)
+	        .selectAll("text")	
+            .style("text-anchor", "middle")
+            .attr("y", -10)
+            .attr("dx", "5px")
+            .attr("dy", "1px")
+            .attr("transform", function(d) {
+                return "rotate(-90)" 
+                });
+
 	    });
-
-
-
 	};
+
 
 })
