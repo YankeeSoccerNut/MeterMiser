@@ -5,6 +5,7 @@ var firstTime = true;
 
 $(document).ready(()=>{
 
+  //First Name
 // Add a change listener to the Toggle button which is actually a checkbox.
 // hide or show the appropriate div depending on the checked status
 // Map -- show map, hide list of buttons....may need to add listeners to markers in order to navigate to detail view for locations
@@ -13,13 +14,24 @@ $(document).ready(()=>{
   $("#list-map-toggle").change(function() {
     console.log( "#list-map-toggle changed" );
     if ($(this).is(':checked')) {   // map
-      $(".location-buttons").hide();
-      $("#locations-map").show();
+      // $(".location-buttons").hide();
+      localStorage.setItem('showMap',true);//store the value
     } else {                        // list
-      $("#locations-map").hide();
-      $(".location-buttons").show();
+      localStorage.setItem('showMap',false);//store the value
+      // $(".location-buttons").show();
     };
+
+    //to read the value from local storage
+    var showMap = localStorage.getItem('showMap');
+    $("#locations-map").toggle();
+
+    // if (!showMap){
+    //   $("#locations-map").hide();
+    // } else {
+    //   $("#locations-map").show();
+    // };
   });
+
 
 
 // To load up Google Maps in javascript versus src tag in HTML..
@@ -86,9 +98,9 @@ $(document).ready(()=>{
                 + currentdate.getDate()
                 +  "/"
                 + currentdate.getFullYear() + " @ "
-                + currentdate.getHours() + ":"
-                + currentdate.getMinutes() + ":"
-                + currentdate.getSeconds();
+                + twoDigits(currentdate.getHours()) + ":"
+                + twoDigits(currentdate.getMinutes()) + ":"
+                + twoDigits(currentdate.getSeconds());
         locationReadings.push(currentReading);
         thermostatUI = currentReading.GetThermostatResult.Thermostat[0].UI[0];
         console.log(thermostatUI);
@@ -139,6 +151,9 @@ $(document).ready(()=>{
 
   });  // getLocations request
 
+  function twoDigits(n){
+    return (n > 9 ? "" + n: "0" + n);
+  };
 
   function initMap(){
 
@@ -177,6 +192,5 @@ $(document).ready(()=>{
       }
     });  // geocode
   }; // markLocation
-
-}  // buildPage
+} // buildPage
 });  // document ready
