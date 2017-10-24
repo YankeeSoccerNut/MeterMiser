@@ -81,13 +81,13 @@ All team members are students in the [Digital Crafts](https://digitalcrafts.com)
  
 <br />1.  **Challenge:** Back-end implementation for polling, persistent storage and client APIs
  
-    **Solution:**  We had some team member experiences with relational databases and SQL but not with any particular backend technologies.  After consultation with the DigitalCrafts instructor, we chose Express as the "front-end" to our back-end services.  This choice enabled us to leverage javascript and have a working solution up quickly.  The fact that the API responds with JSON makes it very easy to consume these services from our front-end client.
+    **Solution:**  We had some team member experiences with relational databases and SQL but not with any particular backend technologies.  After consultation with the DigitalCrafts instructor, we chose Express as the "front-end" to our back-end services.  This choice enabled us to leverage javascript and have a working solution up quickly.  The fact that the API responds with JSON makes it very easy to consume these services from our front-end client.<br />
  
  
 <br />2.  **Challenge:**   Front-End:
     We ran into a few issues regarding elements of bootstrap not working correctly. Toggles would not toggle, drop down menus did not function properly, and CDNs were not responding as anticipated.
  
-    **Solution:**
+    **Solution:**<br />
  
     These issues were resolved by spending hours upon hours searching the internet and developer communities such as Stackoverflow.com, and talking with our instructor Rob.  we found solutions to all of
     the front-end issues by using these methods and was successfully able to implement them into our application.
@@ -95,10 +95,8 @@ All team members are students in the [Digital Crafts](https://digitalcrafts.com)
 <br />3.  **Challenge:**  Learning D3.js
   D3.js has a steep learning curve and many resources were with older versions of the module.
  
-    **Solution:**
-These issues were resolved going through different reference manuals, working with demo graphs, and with Rob.  We were able to compare v3 and v4 to resolve most issues.  We were able to implement an interactive component by adding a callback function to our event-listeners.
- 
- 
+    **Solution:**<br />
+These issues were resolved going through different reference manuals, working with demo graphs, and with Rob.  We were able to compare v3 and v4 to resolve most issues.  We were able to implement an interactive component by adding a callback function to our event-listeners. <br />
  
  
 ##Code Snippets
