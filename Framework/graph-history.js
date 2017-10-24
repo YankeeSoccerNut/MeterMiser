@@ -2,7 +2,7 @@ $(document).ready(()=>{
 
 	// Set the dimensions of the canvas / graph
 	var margin = {top: 10, right: 20, bottom: 40, left: 30};
-	var width = 600 - margin.left - margin.right;
+	var width = 350 - margin.left - margin.right;
 	var height = 600 - margin.top - margin.bottom;
 
 	// Adds the svg canvas
@@ -32,7 +32,7 @@ $(document).ready(()=>{
 	// Timeframe Scales
 	var mostRecent = d3.max(dataFormated, function(d){return d.dateTimeInfo.timeStamp});
 	var fifteenMinutes = 15*60*1000;
-	var halfHour = 30*60*1000;
+	var halfHour = 31*60*1000;
 	var oneDay = 24*60*60*1000;
 	var oneWeek = oneDay*7;
 	var oneMonth = oneDay*30;
@@ -43,6 +43,10 @@ $(document).ready(()=>{
 	x.domain([new Date(mostRecent-oneDay), new Date(mostRecent)]);
 	y.domain(['East Cobb', 'West Cobb', 'Roswell']);
 
+	// Add StoreHours
+	var startYear =
+	var startMonth = 
+	var startDay = timeframeStart.get(Day);
 
 
     // Add the rects.
