@@ -65,7 +65,12 @@ $(document).ready(()=>{
 
     var markerBounds = new google.maps.LatLngBounds();
 
-    for (let i=0; i < locations.length; i++){
+    var locationsAccordianHTML = `<div class="panel-group" id="accordion">`;
+    var locationsAccordianEnd = `</div>`;
+
+
+
+      for (let i=0; i < locations.length; i++){
       // stash the locationId as an attrib in the button for later use (e.g. clicked event)
 
       // get a current reading....TODO:  asynch timing issue on console.log?
@@ -74,31 +79,58 @@ $(document).ready(()=>{
       getCurrentReadingURL += `thermostatId=${locations[i].thermostatId}`;
       console.log(getCurrentReadingURL);
 
-      $.get(getCurrentReadingURL, function (currentReading, status) {
+      var midSection = $.get(getCurrentReadingURL, function (currentReading, status) {
         locationReadings.push(currentReading);
         thermostatUI = currentReading.GetThermostatResult.Thermostat[0].UI[0];
         console.log(thermostatUI.DispTemperature);
         console.log(thermostatUI.DisplayedUnits);
 
-        newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" thermostat-id=${locations[i].thermostatId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}: ${parseInt(thermostatUI.DispTemperature)}&#176 ${thermostatUI.DisplayedUnits}</button>`;
+        locationsAccordianHTML += `
+        <div class="panel panel-default">
+        <div class="panel-heading">
+        <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse${i}">
+        <i class="material-icons dp48">business</i>${locations[i].name}: ${parseInt(thermostatUI.DispTemperature)}&#176 ${thermostatUI.DisplayedUnits}</a></h4>
+        </div>
+        <div id="collapse${i}" class="panel-collapse collapse">
+        <div class="panel-body">DETAILS IN HERE</div></div></div>`;
 
-        $('.location-buttons').html(newButtonHTML);
-
+        console.log(locationsAccordianHTML);
+        // newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" thermostat-id=${locations[i].thermostatId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}: ${parseInt(thermostatUI.DispTemperature)}&#176 ${thermostatUI.DisplayedUnits}</button>`;
+        //
+        //
+        //
+        // $('.location-buttons').html(newButtonHTML);
       });  // getCurrentReadingURL
 
-      // newButtonHTML += `<button type="submit" class="btn-location-buttons btn-lg" thermostat-id=${locations[i].thermostatId} style="width: 70%;"><i class="material-icons dp48">business</i>${locations[i].name}: ${parseInt(thermostatUI.DispTemperature)} ${thermostatUI.DisplayedUnits}</button>`;
+      midSection.done(wrapUpAccordian);
 
       geocodes.push(markLocation(myGeocoder, locations[i], myMap, markerBounds));
       console.log(`geocodes after push ${geocodes}`);
 
+      function wrapUpAccordian() {
+        // kluge....only call close accordian after last element processed
+        console.log(`Time to wrap up? Not unless the i is right ${i}`);
+        if (i == (locations.length - 1)) {
+          console.log(i);
+          closeAccordian();
+        };
+      };
     }; // looping through locations
 
-    console.log(`locationReadings: ${locationReadings}`);
+    function closeAccordian() {
+      console.log("============full accordian ===================");
+      console.log(locationsAccordianHTML + locationsAccordianEnd);
+      console.log("============full accordian ===================");
+      $('.location-buttons').html(locationsAccordianHTML + locationsAccordianEnd);
+    };
+
     // now update the DOM...
     // console.log(newButtonHTML);
     // $('.location-buttons').html(newButtonHTML);
 
   });  // getLocations request
+
 
   function initMap(){
 

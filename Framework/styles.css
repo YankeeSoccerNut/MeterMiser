@@ -116,7 +116,7 @@ body{
   font-weight: bold;
 }
 
-.btn-location-buttons{
+.btn-location-buttons, .panel-heading{
   background-color: hsl(0, 100%, 33%) !important;
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0f0f", endColorstr="#a80000");

@@ -11,15 +11,16 @@ What if there were a way to intelligently monitor and alert the small business o
 * Persistent storage of collected data for analysis and actionable insights
 * Mobile first design to leverage the small business owners most powerful tool -- the smart phone
 * Dynamic and interactive charts to quickly identify trends and compare locations
+* Ability to take action (adjust/turn off) on the thermostat
 
 ##Github Link:
 [MeterMiser]()
 
 ##Team Members & Roles:
 **Click on each member's name to see their GitHub profile**
-All team members are students in the [Digital Crafts](https://digitalcrafts.com) September 2017 cohort. This project was initially completed as the second project for that curriculum and utilized the SCRUM agile development methodology.  Paired and mob programming were the focus in the initial and final stages, while mid- and late-stage work was primarily completed through individual but coordinated and co-located programming.
+All team members are students in the [Digital Crafts](https://digitalcrafts.com) September 2017 cohort. This first project applied agile principles to get a MVP completed in a relatively short timeframe.
 
-####The Team
+##The Team
 * [Scott Anderson](https://https://github.com/YankeeSoccerNut/)  
 **Primary team role:** blah blah <br />
 **Contributions:**  blah blah<br />
