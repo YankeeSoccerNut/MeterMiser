@@ -1,0 +1,16 @@
+Technologies used:
+HTML, CSS, JavaScript, jQuery, Git, GitHub
+
+Framework: Bootstrap
+
+Overview:
+
+Built custom HTML layout using Bootstrap framework and created custom styling for all aspects of application.
+Scheduled daily meetings and worked alongside with Scrum team on application from concept to completion. Developed
+visual and UI aspects of MeterMiser.
+
+Problem & Solutions:
+
+I ran into a few issues regarding elements of bootstrap not working correctly. Toggles would not toggle, drop down menus did not function properly, and CDNs were not responding as anticipated.
+These issues were resolved by spending hours upon hours searching the internet and developer communities such as Stackoverflow.com, and talking with our instructor Rob.  I found solutions to all of
+the front-end issues by using these methods and was successfully able to implement them into our application.

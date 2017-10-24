@@ -32,8 +32,8 @@ All team members are students in the [Digital Crafts](https://digitalcrafts.com)
 **Key code portions:** Data analysis, d3.js charting, dynamic timeline filtering.
 
 * [Michael McFarland](https://github.com/mcfarland422)  
-**Primary team role:** blah blah<br />
-**Contributions:** blah blah<br />
+**Primary team role:** Front-End Development and User Interface<br />
+**Contributions:** Built custom HTML layout using Bootstrap framework and created custom CSS styling for all aspects of application. Scheduled daily meetings and worked alongside with Scrum team on application from concept to completion. Developed visual and UI aspects of MeterMiser.<br />
 **Key code portions:** All of the HTML and CSS.  Overall style and flow.
 
 
@@ -83,9 +83,13 @@ All team members are students in the [Digital Crafts](https://digitalcrafts.com)
     **Solution:**  We had some team member experiences with relational databases and SQL but not with any particular backend technologies.  After consultation with the DigitalCrafts instructor, we chose Express as the "front-end" to our back-end services.  This choice enabled us to leverage javascript and have a working solution up quickly.  The fact that the API responds with JSON makes it very easy to consume these services from our front-end client.
 
 
-2.  **Challenge:**   
+2.  **Challenge:**   Front-End:
+    We ran into a few issues regarding elements of bootstrap not working correctly. Toggles would not toggle, drop down menus did not function properly, and CDNs were not responding as anticipated.
 
-    **Solution:** T
+    **Solution:**
+
+    These issues were resolved by spending hours upon hours searching the internet and developer communities such as Stackoverflow.com, and talking with our instructor Rob.  we found solutions to all of
+    the front-end issues by using these methods and was successfully able to implement them into our application.
 
 3.  **Challenge:**  
 
